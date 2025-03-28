@@ -39,24 +39,24 @@ Introdução à Lógica Proposicional e à Teoria dos Conjuntos; Indução Matem
 
 ## 4. Conteúdo Programático e Cronograma
 
-| Semana | Conteúdo | Carga Horária | Bibliografia |
-|--------|----------|---------------|--------------|
-| 1 | Noções de lógica proposicional: proposições, conectivos lógicos, tabelas-verdade | 6h | [1], [2] |
-| 2 | Teoria dos conjuntos: subconjuntos, cardinalidade, operações, diagramas de Venn | 6h | [2], [5] |
-| 3 | Notações somatório e produtório | 6h | [2] |
-| 4 | Indução matemática: primeiro e segundo princípios | 6h | [2], [5] |
-| 5 | Provas por indução matemática | 6h | [2] |
-| 6 | Princípio fundamental da contagem (aditivo e multiplicativo) | 6h | [1], [2] |
-| 7 | Permutações e combinações simples e com repetição (I) | 6h | [1], [2] |
-| 8 | Permutações e combinações simples e com repetição (II) | 6h | [1], [2] |
-| 9 | Princípio da inclusão e exclusão | 6h | [2], [4] |
-| 10 | Permutações caóticas, lemas de Kaplansky (I) | 6h | [2], [4] |
-| 11 | Permutações caóticas, lemas de Kaplansky (II) | 6h | [2], [4] |
-| 12 | Coeficientes binomiais: triângulo de Pascal, binômio de Newton, aplicações | 6h | [1], [2] |
-| 13 | Conceito de probabilidade, espaço amostral e eventos | 6h | [3], [5] |
-| 14 | Probabilidade condicional | 6h | [3], [5] |
-| 15 | Eventos independentes | 6h | [3], [5] |
-| 16 | Teorema de Bayes | 6h | [3], [5] |
+| Semana | Conteúdo                                                                         | Carga Horária | Bibliografia |
+| ------ | -------------------------------------------------------------------------------- | ------------- | ------------ |
+| 1      | Noções de lógica proposicional: proposições, conectivos lógicos, tabelas-verdade | 6h            | [1], [2]     |
+| 2      | Teoria dos conjuntos: subconjuntos, cardinalidade, operações, diagramas de Venn  | 6h            | [2], [5]     |
+| 3      | Notações somatório e produtório                                                  | 6h            | [2]          |
+| 4      | Indução matemática: primeiro e segundo princípios                                | 6h            | [2], [5]     |
+| 5      | Provas por indução matemática                                                    | 6h            | [2]          |
+| 6      | Princípio fundamental da contagem (aditivo e multiplicativo)                     | 6h            | [1], [2]     |
+| 7      | Permutações e combinações simples e com repetição (I)                            | 6h            | [1], [2]     |
+| 8      | Permutações e combinações simples e com repetição (II)                           | 6h            | [1], [2]     |
+| 9      | Princípio da inclusão e exclusão                                                 | 6h            | [2], [4]     |
+| 10     | Permutações caóticas, lemas de Kaplansky (I)                                     | 6h            | [2], [4]     |
+| 11     | Permutações caóticas, lemas de Kaplansky (II)                                    | 6h            | [2], [4]     |
+| 12     | Coeficientes binomiais: triângulo de Pascal, binômio de Newton, aplicações       | 6h            | [1], [2]     |
+| 13     | Conceito de probabilidade, espaço amostral e eventos                             | 6h            | [3], [5]     |
+| 14     | Probabilidade condicional                                                        | 6h            | [3], [5]     |
+| 15     | Eventos independentes                                                            | 6h            | [3], [5]     |
+| 16     | Teorema de Bayes                                                                 | 6h            | [3], [5]     |
 
 ---
 
