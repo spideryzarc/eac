@@ -1,9 +1,26 @@
 ---
 marp: true
+title: "Lógica Proposicional"
 theme: default
+class: lead
+footer: "F.P. - Albert E. F. Muritiba"
 paginate: true
-math: true
+backgroundColor: #d6e0e1
+#backgroundImage: url('https://marp.app/assets/hero-background.svg')
+# backgroundImage: url('https://spideryzarc.github.io/backgrounds/tt/light_desk.jpg')
+style: |
+  .small{
+    font-size: 0.75rem;
+  }
+  .big{
+    font-size: 1.5rem;
+  }
+# Deus é bom o tempo todo
 ---
+
+<!-- _backgroundImage: url('https://spideryzarc.github.io/backgrounds/tt/light_desk.jpg') -->
+
+![bg right](empty.svg)
 
 # Lógica Proposicional
 

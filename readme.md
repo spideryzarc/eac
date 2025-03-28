@@ -73,16 +73,15 @@ Introdução à Lógica Proposicional e à Teoria dos Conjuntos; Indução Matem
 
 ## 6. Avaliação
 
-- Serão realizadas **duas avaliações escritas** ao longo do semestre (P1 e P2).
-- Poderão ser aplicadas **listas de exercícios avaliativas** com peso complementar.
-- A nota final será composta por:
-  - P1: 40%
-  - P2: 40%
-  - Exercícios/Participação: 20%
-- Critério de aprovação:
-  - Nota final ≥ 5,0
-  - Frequência mínima de 75%
-- Estudantes com desempenho insatisfatório poderão realizar avaliação de recuperação conforme normas institucionais.
+- Serão realizadas **Três Provas** (P1, P2 e P3). 
+- A média parcial será calculada da seguinte forma:
+  - Média Parcial = (P1 + P2 + P3) / 3
+- A nota mínima para aprovação é 7,0 (sete).
+- O aluno poderá ser aprovado por média, desde que tenha frequência mínima de 75% nas aulas e atividades propostas.
+- O aluno que não atingir a média mínima poderá realizar uma prova final (AF) para tentar a recuperação.
+- A nota da prova final será somada à média parcial, e a média final será calculada da seguinte forma:
+  - Média Final = (Média Parcial + AF) / 2
+- Neste caso, a nota mínima para aprovação será 5,0 (cinco).
 
 ---
 
