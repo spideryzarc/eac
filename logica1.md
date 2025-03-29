@@ -199,7 +199,7 @@ Este conectivo é muito importante, por isso vamos analisá-lo com mais cuidado.
 Suponha que a proposição abaixo seja verdadeira:
 > $p \rightarrow q$: "Se está chovendo, então está frio."
 
-- O que você pode concluir, se eu afirmar:
+- O que você pode concluir, se eu afirmar que:
   * "Está chovendo."?
     * Você pode concluir que "Está frio." ✅
   * "Não está frio."?
