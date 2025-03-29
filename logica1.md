@@ -32,7 +32,7 @@ Proposições, conectivos lógicos e tabelas-verdade.
 
 ### O que é lógica proposicional?
 
-A lógica proposicional trata de proposições e suas relações por meio de conectivos lógicos.
+A lógica proposicional trata de **proposições** e suas relações por meio de **conectivos lógicos**.
 
 É base para áreas como:
 - Matemática
@@ -55,7 +55,20 @@ A lógica proposicional trata de proposições e suas relações por meio de con
 - "3 é um número par." ✅
 - "A chuva está forte." ✅
 
-⚠️ $x+1=3$ não é uma proposição, mas um predicado — veremos mais adiante.
+⚠️ $x+1=3$ não é uma proposição, mas um **predicado lógico** — veremos mais adiante.
+
+---
+
+## Representação
+
+- Proposições são representadas por letras: $p$, $q$, $r$, etc.
+- Exemplos:
+    - $p$: "Está chovendo."
+    - $q$: "Está frio."
+    - $r$: "2 é um número par."
+<br>
+
+> 💡**Convenção**: damos preferência a letras minúsculas começando do $p$. Mas podemos usar qualquer outra letra se for conveniente.
 
 ---
 
@@ -63,6 +76,10 @@ A lógica proposicional trata de proposições e suas relações por meio de con
 
 - **Simples**: não pode ser decomposta em outras proposições.
 - **Composta**: formada por proposições simples ligadas por conectivos lógicos.
+
+<br>
+
+> 💡**Convenção**: Usa-se letras minúsculas para proposições simples e letras maiúsculas para proposições compostas.
 
 ---
 
@@ -83,14 +100,118 @@ A lógica proposicional trata de proposições e suas relações por meio de con
 
 | Conectivo       | Nome               | Símbolo                   | Leitura                      |
 |------------------|--------------------|----------------------------|------------------------------|
-| Negação         | não                | $\neg p$                   | "não p"                      |
-| Conjunção       | e                  | $p \land q$                | "p e q"                      |
-| Disjunção       | ou                 | $p \lor q$                 | "p ou q"                     |
-| Implicação      | se...então         | $p \rightarrow q$          | "se p, então q"              |
-| Bicondicional   | se e somente se    | $p \leftrightarrow q$      | "p se e somente se q"        |
+| Negação         | não - *not*               | $\neg p$                   | "não p"                      |
+| Conjunção       | e - *and*                 | $p \land q$                | "p e q"                      |
+| Disjunção       | ou - *or*                 | $p \lor q$                 | "p ou q"                     |
+| Implicação      | se...então - *if*        | $p \rightarrow q$          | "se p, então q"              |
+| Bicondicional   | se e somente se - *if only if (iff)*  | $p \leftrightarrow q$      | "p se e somente se q"        |
 
 ---
 
+## Negação
+A negação de uma proposição $p$ é representada por $\neg p$ e inverte seu valor lógico.
+
+Tabela-verdade:
+| $p$ | $\neg p$ |
+|-----|----------|
+|  V  |    F     |
+|  F  |    V     |
+
+> Exemplo:
+> "$p$: Está chovendo."
+>  $\neg p$: "Não está chovendo."
+
+![bg right:30% drop-shadow 90%](images/not.drawio.svg)
+
+---
+
+## Conjunção (E)
+A conjunção de duas proposições $p$ e $q$ é representada por $p \land q$ e é verdadeira apenas se ambas forem verdadeiras.
+Tabela-verdade:
+| $p$ | $q$ | $p \land q$ |
+|-----|-----|--------------|
+|  V  |  V  |      V       |
+|  V  |  F  |      F       |
+|  F  |  V  |      F       |
+|  F  |  F  |      F       |
+
+![bg right:30% drop-shadow 90%](images/and.drawio.svg)
+
+---
+
+> Exemplo:
+> "$p$: Está chovendo."
+> "$q$: Está frio."
+> $p \land q$: "Está chovendo **e** está frio."
+
+---
+
+## Disjunção (OU)
+
+A disjunção de duas proposições $p$ e $q$ é representada por $p \lor q$ e é verdadeira se pelo menos uma das proposições for verdadeira.
+Tabela-verdade:
+| $p$ | $q$ | $p \lor q$ |
+|-----|-----|--------------|
+|  V  |  V  |      V       |
+|  V  |  F  |      V       |
+|  F  |  V  |      V       |
+|  F  |  F  |      F       |
+![bg right:30% drop-shadow 90%](images/or.drawio.svg)
+---
+> Exemplo:
+> "$p$: Está chovendo."
+> "$q$: Está frio."
+> $p \lor q$: "Está chovendo **ou** está frio."
+>
+---
+
+**E, OU e NÃO** são conectivos lógicos fundamentais. Contudo, devido à sua importância, é interessante conhecer outros conectivos lógicos. 
+
+---
+## Condicional (SE... ENTÃO)
+A condicional de duas proposições $p$ e $q$ é representada por $p \rightarrow q$ e é verdadeira, exceto quando $p$ é verdadeira e $q$ é falsa.
+
+Tabela-verdade:
+| $p$ | $q$ | $p \rightarrow q$ |
+|-----|-----|--------------------|
+|  V  |  V  |         V          |
+|  V  |  F  |         F          |
+|  F  |  V  |         V          |
+|  F  |  F  |         V          |
+![bg right:30% drop-shadow 90%](images/if.drawio.svg)
+
+---
+
+> Exemplo:
+> "$p$: Está chovendo."
+> "$q$: Está frio."
+> $p \rightarrow q$: "Se está chovendo, então está frio."
+>
+
+<br>
+
+Este conectivo é muito importante, por isso vamos analisá-lo com mais cuidado.
+
+---
+
+### Condição Necessária e Suficiente
+
+Suponha que a proposição abaixo seja verdadeira:
+> $p \rightarrow q$: "Se está chovendo, então está frio."
+
+- O que você pode concluir, se eu afirmar:
+  * "Está chovendo."?
+    * Você pode concluir que "Está frio." ✅
+  * "Não está frio."?
+    * Você pode concluir que "Não está chovendo." ✅ 
+
+
+
+
+
+
+
+---
 ## Uso informal vs. formal
 
 ⚠️ Conectivos lógicos são aproximações formais da linguagem cotidiana.  
