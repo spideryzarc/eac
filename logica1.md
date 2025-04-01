@@ -1,5 +1,6 @@
 ---
 marp: true
+math: mathjax
 title: "Lógica Proposicional"
 theme: default
 class: lead
@@ -117,9 +118,9 @@ Tabela-verdade:
 |  V  |    F     |
 |  F  |    V     |
 
-> Exemplo:
-> "$p$: Está chovendo."
->  $\neg p$: "Não está chovendo."
+**Exemplo**:
+> $p$ : Está chovendo.
+> $\neg p$ : **Não** está chovendo.
 
 ![bg right:30% drop-shadow 90%](images/not.drawio.svg)
 
@@ -139,10 +140,10 @@ Tabela-verdade:
 
 ---
 
-> Exemplo:
-> "$p$: Está chovendo."
-> "$q$: Está frio."
-> $p \land q$: "Está chovendo **e** está frio."
+**Exemplo**:
+> $p$ : Está chovendo.
+> $q$ : Está frio.
+> $p \land q$ : Está chovendo **e** está frio.
 
 ---
 
@@ -190,6 +191,10 @@ Tabela-verdade:
 
 <br>
 
+> **Observação**: A proposição $p \rightarrow q$ é **falsa** apenas quando $p$ é verdadeira e $q$ é falsa, ou seja, só podemos afirmar que a proposição acima é false se constatarmos que está chovendo e **não** está frio.
+
+<br>
+
 Este conectivo é muito importante, por isso vamos analisá-lo com mais cuidado.
 
 ---
@@ -205,13 +210,18 @@ Suponha que a proposição abaixo seja verdadeira:
   * "Não está frio."?
     * Você pode concluir que "Não está chovendo." ✅ 
 
+---
 
+> $p \rightarrow q$: "Se está chovendo, então está frio."
 
-
-
-
+- O que você pode concluir, se eu afirmar que:
+  * "Não está chovendo."?
+    * Você pode concluir nada. ❌
+  * "Está frio."?
+    * Você pode concluir nada. ❌
 
 ---
+
 ## Uso informal vs. formal
 
 ⚠️ Conectivos lógicos são aproximações formais da linguagem cotidiana.  
@@ -229,20 +239,23 @@ Nem sempre seu uso na lógica corresponde ao uso informal.
 Na prática: escolha só um.  
 Na lógica: ambos são permitidos.
 
+<br>
+
+> ⚠️ **Atenção**: Nas ciências exatas, o "ou" é sempre **inclusivo** quando não especificado.
+
 ---
 
 ## "Se... então" – Implicação
 
-- Cotidianamente, "se... então" sugere causa e consequência.
-- Na lógica, $p \rightarrow q$ só é **falsa** se $p$ for verdadeira **e** $q$ for falsa.
+- Cotidianamente, "se... então" pode ser interpretado como "se e somente se".
+- Na lógica, $p \rightarrow q$ é **unidirecional**: $p$ não implica $q$ e vice-versa.
 
 **Exemplo**:  
-> "Se você estudar, então pode sair."  
+> "**Se** você estudar, **então** pode sair."  ($p \rightarrow q$)
 Se não estudar e sair, a lógica ainda considera a proposição **verdadeira**.
 
-💡 Mais precisa seria a forma:  
-> "Você só pode sair **se e somente se** estudar."  
-Representado por $p \leftrightarrow q$.
+💡 A forma mais precisa seria:
+> "Você pode sair **se e somente se** estudar." ($p \leftrightarrow q$)
 
 ---
 
@@ -262,7 +275,7 @@ Na lógica, são **equivalentes**.
 
 ## Tabelas-Verdade
 
-A tabela-verdade mostra todos os valores lógicos possíveis de uma proposição composta.
+A tabela-verdade mostra todos as combinações possíveis de valores lógicos para as proposições simples e o resultado da proposição composta.
 
 ### Exemplo: Conjunção $p \land q$
 
@@ -272,6 +285,26 @@ A tabela-verdade mostra todos os valores lógicos possíveis de uma proposição
 |  V  |  F  |      F       |
 |  F  |  V  |      F       |
 |  F  |  F  |      F       |
+
+Devido a natureza combinatória, o número de linhas da tabela-verdade é $2^n$, onde $n$ é o número de proposições simples.
+
+<!-- _footer: "" -->
+---
+**Exemplo**: 
+
+| $p$ | $q$ | $r$ | $p \land (q \lor r)$ |
+|-----|-----|-----|:--------------------:|
+|  V  |  V  |  V  |          V           |
+|  V  |  V  |  F  |          V           |
+|  V  |  F  |  V  |          V           |
+|  V  |  F  |  F  |          F           |
+|  F  |  V  |  V  |          V           |
+|  F  |  V  |  F  |          V           |
+|  F  |  F  |  V  |          F           |
+|  F  |  F  |  F  |          F           |
+
+
+
 
 ---
 

@@ -73,15 +73,16 @@ Introdução à Lógica Proposicional e à Teoria dos Conjuntos; Indução Matem
 
 ## 6. Avaliação
 
-- Serão realizadas **Três Provas** (P1, P2 e P3). 
-- A média parcial será calculada da seguinte forma:
-  - Média Parcial = (P1 + P2 + P3) / 3
-- A nota mínima para aprovação é 7,0 (sete).
-- O aluno poderá ser aprovado por média, desde que tenha frequência mínima de 75% nas aulas e atividades propostas.
-- O aluno que não atingir a média mínima poderá realizar uma prova final (AF) para tentar a recuperação.
-- A nota da prova final será somada à média parcial, e a média final será calculada da seguinte forma:
-  - Média Final = (Média Parcial + AF) / 2
-- Neste caso, a nota mínima para aprovação será 5,0 (cinco).
+- A avaliação será composta por **Três Provas** (P1, P2 e P3).
+- A **Média Parcial (MP)** será calculada da seguinte forma:
+  - MP = (P1 + P2 + P3) / 3
+- Para ser aprovado por média, o aluno deve atender aos seguintes critérios:
+  - Obter uma Média Parcial (MP) igual ou superior a 7,0 (sete).
+  - Possuir frequência mínima de 75% nas aulas e atividades propostas.
+- O aluno que não alcançar a Média Parcial mínima (MP < 7,0) terá a oportunidade de realizar uma **Prova Final (AF)**.
+- A **Média Final (MF)** será calculada da seguinte forma:
+  - MF = (MP + AF) / 2
+- Para ser aprovado após a Prova Final, o aluno deve obter uma Média Final (MF) igual ou superior a 5,0 (cinco).
 
 ---
 
