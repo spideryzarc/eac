@@ -257,4 +257,38 @@ Marque V (verdadeiro) ou F (falso) para cada uma das afirmações abaixo:
 6. $B \in A$
 7. $C \in A$
 8. $A \in C$
+9. $A \cap B = \emptyset$
+10. $(A \cap C) \in C$
+11. $A \cup B = \{1, 2, 3\}$
+12. $B \subsetneq A$
 
+## Parte 2 – Conjuntos e Lógica Proposicional
+
+
+### Conjuntos e Lógica Proposicional
+
+Qual é a lei lógica dá respaldo a cada uma das afirmações abaixo?
+
+1. $(A \subset B) \land (x \in A) \implies (x \in B)$
+2. $(A \cap B) \subset A$
+3. $A \subset (A \cup B)$
+4. $A' \subset B' \equiv A \supset B$
+5. $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+6. $A' \cup B' = (A \cap B)'$
+7. $A \subset B \equiv x \notin A \lor x \in B$
+8. $A \cap A' = \emptyset$
+9. $A \cup A' = U$
+10. $A \cap (B \cap C) = (A \cap B) \cap C$
+11. $x \in (A \cup B) \land x \notin A \implies x \in B$
+
+
+### Definições das operações de conjuntos
+
+A quais definições correspondem as afirmações abaixo?
+
+1. $(\forall x)(x \in A \rightarrow x \in B)$
+2. $(\forall x)(x \in A \leftrightarrow x \in B)$
+3. $\{x |x \in A \land x \in B\}$
+4. $\{x |x \in A \lor x \in B\}$
+5. $\{x |x \in A \land x \notin B\}$
+6. $(\forall x)(x \in A \rightarrow x \in B)\land  (\exists x)(x \in B \land x \notin A)$
