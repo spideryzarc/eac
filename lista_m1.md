@@ -29,9 +29,9 @@ H_1 & & \neg A\\
 H_2 & & B\\
 H_3 & & B \rightarrow (A\lor C)\\
 \therefore & & C\\
-&&\_\_\_\_\_\_\_\_\_\_\_\_\_\\
-1. && A \lor C & \text{ \_\_\_\_\_\_\_}\\
-2. && C & \text{ \_\_\_\_\_\_\_}\\
+\hline
+1. && A \lor C & \underline{\hspace{2cm}}\\
+2. && C & \underline{\hspace{2cm}}\\
 \end{align*}
 $$
 
@@ -121,9 +121,10 @@ Use lógica proposicional para provar que cada argumento é válido:
 ### Argumento 1
 $$
 \begin{align*}
-H_1 & & A'\\
+H_1 & & \neg A\\
 H_2 & & B \rightarrow A\\
-\therefore & & B'\\
+\therefore & & \neg B\\
+\hline
 \end{align*}
 $$
 
@@ -131,9 +132,10 @@ $$
 $$
 \begin{align*}
 H_1 & & A \rightarrow (B \rightarrow C)\\
-H_2 & & A\lor D'\\
+H_2 & & A\lor \neg D\\
 H_3 & & B\\
 \therefore & & D \rightarrow C\\
+\hline
 \end{align*}
 $$
 
@@ -144,6 +146,7 @@ H_1 & & \neg A \rightarrow \neg B\\
 H_2 & & B\\
 H_3 & & A \rightarrow C\\
 \therefore & & C\\
+\hline
 \end{align*}
 $$
 
@@ -153,6 +156,7 @@ $$
 H_1 & & P\lor \neg Q\\
 H_2 & & Q\\
 \therefore & & P\\
+\hline
 \end{align*}
 $$
 
@@ -162,6 +166,7 @@ $$
 H_1 & & P \rightarrow Q\\
 H_2 & & Q \rightarrow R\\
 \therefore & & P \rightarrow R\\
+\hline
 \end{align*}
 $$
 
@@ -171,6 +176,7 @@ $$
 H_1 & & P \rightarrow \neg Q\\
 H_2 & & P\\
 \therefore & & \neg Q\\
+\hline
 \end{align*}
 $$
 
@@ -180,6 +186,7 @@ $$
 H_1 & & \neg P \rightarrow Q\\
 H_2 & & Q \rightarrow \neg R\\
 \therefore & & \neg P \rightarrow \neg R\\
+\hline
 \end{align*}
 $$
 
@@ -189,6 +196,7 @@ $$
 H_1 & & P\lor Q\\
 H_2 & & \neg P\\
 \therefore & & Q\\
+\hline
 \end{align*}
 $$
 
@@ -232,4 +240,21 @@ Prove por indução matemática as seguintes afirmações:
 
 
 # Conjuntos e Teoria dos Conjuntos
+
+## Parte 1 – Elementos e Conjuntos
+
+Seja: 
+- $A = \{1, 2, 3\}$
+- $B = \{\emptyset, 1, 2\}$
+- $C = \{\{1, 2, 3\}, 1, 2, 3, 4\}$
+
+Marque V (verdadeiro) ou F (falso) para cada uma das afirmações abaixo:
+1. $A \subset B$  
+2. $B \subset A$
+3. $A \subset C$
+4. $C \subset A$
+5. $A \in B$
+6. $B \in A$
+7. $C \in A$
+8. $A \in C$
 
