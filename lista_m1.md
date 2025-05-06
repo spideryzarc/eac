@@ -267,7 +267,7 @@ Marque V (verdadeiro) ou F (falso) para cada uma das afirmações abaixo:
 
 ### Conjuntos e Lógica Proposicional
 
-Qual é a lei lógica dá respaldo a cada uma das afirmações abaixo?
+Qual lei lógica dá respaldo a cada uma das afirmações abaixo?
 
 1. $(A \subset B) \land (x \in A) \implies (x \in B)$
 2. $(A \cap B) \subset A$
