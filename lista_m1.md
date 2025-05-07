@@ -24,7 +24,7 @@ Identifique a regra de inferência ilustrada em cada argumento abaixo:
 Justifique cada passo na sequência de demonstração abaixo:
 
 $$
-\begin{align*}
+\begin{aligned}
 H_1 & & \neg A\\
 H_2 & & B\\
 H_3 & & B \rightarrow (A\lor C)\\
@@ -32,7 +32,7 @@ H_3 & & B \rightarrow (A\lor C)\\
 \hline
 1. && A \lor C & \underline{\hspace{2cm}}\\
 2. && C & \underline{\hspace{2cm}}\\
-\end{align*}
+\end{aligned}
 $$
 
 ## Parte 3 – Avaliação Lógica de Proposições
@@ -103,14 +103,17 @@ Analise logicamente as proposições e indique sua veracidade:
 
 ## Parte 9 – Uso dos quantificadores
 
+Seja o domíno de discurso o conjunto dos períodos de um determinado dia (amanhã, tarde, noite, madrugada).
 Escreva cada afirmação em forma simbólica, usando quantificadores:
 
-1. Todos os dias são ensolarados.
-2. Alguns dias são chuvosos.
-3. Nenhum dia é ensolarado e chuvoso ao mesmo tempo.
+1. Todas as manhãs são ensolaradas.
+2. Algumas manhãs são chuvosas.
+3. Nenhuma manhã é ensolarado e chuvoso ao mesmo tempo.
+4. Nem sempre é chuvoso
+5. Choveu em algum momento do dia.
 
 Considere:
-- $D(x)$: x é um dia.
+- $M(x)$: x é uma manhã.
 - $S(x)$: x é ensolarado.
 - $C(x)$: x é chuvoso.
 
@@ -120,84 +123,84 @@ Use lógica proposicional para provar que cada argumento é válido:
 
 ### Argumento 1
 $$
-\begin{align*}
+\begin{aligned}
 H_1 & & \neg A\\
 H_2 & & B \rightarrow A\\
 \therefore & & \neg B\\
 \hline
-\end{align*}
+\end{aligned}
 $$
 
 ### Argumento 2
 $$
-\begin{align*}
+\begin{aligned}
 H_1 & & A \rightarrow (B \rightarrow C)\\
 H_2 & & A\lor \neg D\\
 H_3 & & B\\
 \therefore & & D \rightarrow C\\
 \hline
-\end{align*}
+\end{aligned}
 $$
 
 ### Argumento 3
 $$
-\begin{align*}
+\begin{aligned}
 H_1 & & \neg A \rightarrow \neg B\\
 H_2 & & B\\
 H_3 & & A \rightarrow C\\
 \therefore & & C\\
 \hline
-\end{align*}
+\end{aligned}
 $$
 
 ### Argumento 4
 $$
-\begin{align*}
+\begin{aligned}
 H_1 & & P\lor \neg Q\\
 H_2 & & Q\\
 \therefore & & P\\
 \hline
-\end{align*}
+\end{aligned}
 $$
 
 ### Argumento 5
 $$
-\begin{align*}
+\begin{aligned}
 H_1 & & P \rightarrow Q\\
 H_2 & & Q \rightarrow R\\
 \therefore & & P \rightarrow R\\
 \hline
-\end{align*}
+\end{aligned}
 $$
 
 ### Argumento 6
 $$
-\begin{align*}
+\begin{aligned}
 H_1 & & P \rightarrow \neg Q\\
 H_2 & & P\\
 \therefore & & \neg Q\\
 \hline
-\end{align*}
+\end{aligned}
 $$
 
 ### Argumento 7
 $$
-\begin{align*}
+\begin{aligned}
 H_1 & & \neg P \rightarrow Q\\
 H_2 & & Q \rightarrow \neg R\\
 \therefore & & \neg P \rightarrow \neg R\\
 \hline
-\end{align*}
+\end{aligned}
 $$
 
 ### Argumento 8
 $$
-\begin{align*}
+\begin{aligned}
 H_1 & & P\lor Q\\
 H_2 & & \neg P\\
 \therefore & & Q\\
 \hline
-\end{align*}
+\end{aligned}
 $$
 
 # Somatório e Indução Matemática
@@ -235,60 +238,85 @@ Prove por indução matemática as seguintes afirmações:
 ### Divisibilidade
 
 16. $n^3+ 2n$ é divisível por 3 para todo n natural.
-17. $4^n+6n-1$ é divisível por 9 para todo n natural.
+17. $4^n+6n-1$ é divisível por 9 para todo n natural $(n > 1)$.
 18. $2^{2n} - 1$ é divisível por 3 para todo n natural.
 
 
 # Conjuntos e Teoria dos Conjuntos
 
-## Parte 1 – Elementos e Conjuntos
+## Parte 1 – Elementos, Pertinência e Subconjuntos
 
-Seja: 
-- $A = \{1, 2, 3\}$
-- $B = \{\emptyset, 1, 2\}$
-- $C = \{\{1, 2, 3\}, 1, 2, 3, 4\}$
+Seja:
 
-Marque V (verdadeiro) ou F (falso) para cada uma das afirmações abaixo:
-1. $A \subset B$  
-2. $B \subset A$
+* $A = \{1, 2, 3\}$
+* $B = \{\emptyset, 1, 2\}$
+* $C = \{\{1, 2, 3\}, 1, 2, 3, 4\}$
+
+Marque V (verdadeiro) ou F (falso) para cada afirmação:
+
+1. $1 \in B$
+2. $\{1,2\} \subset B$
 3. $A \subset C$
-4. $C \subset A$
-5. $A \in B$
-6. $B \in A$
-7. $C \in A$
-8. $A \in C$
-9. $A \cap B = \emptyset$
-10. $(A \cap C) \in C$
-11. $A \cup B = \{1, 2, 3\}$
-12. $B \subsetneq A$
+4. $A \in C$
+5. $\emptyset \subset A$
+6. $\emptyset \in B$
+7. $B \subset C$
+8. $\{A\} \subset C$
 
-## Parte 2 – Conjuntos e Lógica Proposicional
+## Parte 2 – Operações com Conjuntos
 
+Considere os conjuntos:
 
-### Conjuntos e Lógica Proposicional
+* $U = \{1, 2, 3, 4, 5, 6, 7, 8\}$
+* $X = \{1, 3, 5, 7\}$
+* $Y = \{2, 3, 5, 7\}$
+* $Z = \{1, 2, 4, 8\}$
 
-Qual lei lógica dá respaldo a cada uma das afirmações abaixo?
+Determine:
 
-1. $(A \subset B) \land (x \in A) \implies (x \in B)$
-2. $(A \cap B) \subset A$
-3. $A \subset (A \cup B)$
-4. $A' \subset B' \equiv A \supset B$
-5. $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
-6. $A' \cup B' = (A \cap B)'$
-7. $A \subset B \equiv x \notin A \lor x \in B$
-8. $A \cap A' = \emptyset$
-9. $A \cup A' = U$
-10. $A \cap (B \cap C) = (A \cap B) \cap C$
-11. $x \in (A \cup B) \land x \notin A \implies x \in B$
+1. $X \cup Y$
+2. $X \cap Y$
+3. $X - Z$
+4. $(X \cup Y) - Z$
+5. $X \cap (Y \cup Z)$
 
+## Parte 3 – Diagramas de Venn
 
-### Definições das operações de conjuntos
+Considere três conjuntos $A, B$ e $C$, representados em um diagrama de Venn. Traduza as seguintes afirmações para linguagem simbólica:
 
-A quais definições correspondem as afirmações abaixo?
+1. Elementos que pertencem somente a $A$.
+2. Elementos que pertencem simultaneamente a $A$, $B$ e $C$.
+3. Elementos que pertencem a exatamente dois dos conjuntos.
+4. Elementos que não pertencem a $A$, mas pertencem a $B$ ou $C$.
 
-1. $(\forall x)(x \in A \rightarrow x \in B)$
-2. $(\forall x)(x \in A \leftrightarrow x \in B)$
-3. $\{x |x \in A \land x \in B\}$
-4. $\{x |x \in A \lor x \in B\}$
-5. $\{x |x \in A \land x \notin B\}$
-6. $(\forall x)(x \in A \rightarrow x \in B)\land  (\exists x)(x \in B \land x \notin A)$
+## Parte 4 – Questões Conceituais
+
+Responda justificando brevemente cada questão:
+
+1. Pode existir um conjunto que seja subconjunto dele mesmo? Justifique.
+2. Pode existir um conjunto que seja elemento dele mesmo? Justifique.
+3. Explique a diferença conceitual entre $\emptyset \subset A$ e $\emptyset \in A$.
+
+## Parte 5 – Cardinalidade e Conjunto das Partes
+
+Dado o conjunto $M = \{a, b, c\}$, determine:
+
+1. A cardinalidade de $M$.
+2. O conjunto das partes de $M$.
+3. A cardinalidade do conjunto das partes de $M$.
+
+## Parte 6 – Operadores Menos Comuns
+
+Embora menos utilizados, os operadores abaixo são importantes para a teoria dos conjuntos. Determine o significado de cada um deles:
+
+1. $A \subseteq B$
+2. $A \subsetneq B$
+3. $A \supset B$  
+4. $A \supsetneq B$
+6. $a \notin B$
+7. $A \Delta B$  ou $A \oplus B$
+8. $\bigcup_{i = 1}^{n} A_i$
+9. $\bigcap_{i = 1}^{n} A_i$
+10. $A^c$ ou $\overline{A}$
+11. $A \times B$
+12. $A/B$ 
