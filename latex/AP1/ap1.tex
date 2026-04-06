@@ -1,0 +1,106 @@
+% !TeX spellcheck = pt_BR
+\documentclass[a4paper,12pt]{letter}  % tipo do documento
+%\usepackage[brazil]{babel}           % define a linguagem padrão
+\usepackage{graphicx}                % permite a inserção de figuras
+\usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}        % para usar caracteres acentuados diretamente
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=1.5cm,vmargin=1cm]{geometry}
+\usepackage{listings} %para colocar codigos
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\setlength{\columnsep}{1.5cm}
+\setlength{\columnseprule}{0.2pt}
+
+% \usepackage{splitidx}
+% \lstset{numbers=left,
+% stepnumber=1,
+% firstnumber=1,
+% numberstyle=\tiny,
+% extendedchars=true,
+% breaklines=true,
+% frame=tb,
+% basicstyle=\footnotesize,
+% % stringstyle=\ttfamily,
+% % showstringspaces=false
+% }
+
+
+
+
+% \newcommand{\gabarito}[1]{\textbf{\begin{small} \\ #1 \\ \end{small}}} %mostrar gabarito
+\newcommand{\gabarito}[1]{\textbf{\begin{small} \end{small}}} %nao mostrar gabarito
+
+
+\begin{document}
+\thispagestyle{empty}
+% \pagestyle{empty}
+
+UNIVERSIDADE FEDERAL DO CEARÁ\\
+Departamento de Estatística e Matemática Aplicada\\
+Disciplina de Elementos de Análise Combinatória cc0279.\\
+Professor: Albert Einstein F. Muritiba.\\
+Temas: Lógica e Conjuntos\\[0.2cm]
+\textbf{Nome}: \makebox[380pt]{\hrulefill} \vspace{2pt}
+%Matr\'icula:\makebox[60pt]{\hrulefill} \vspace{2pt}
+\begin{center}
+	1º AP
+	% -- \textit{2ª Chamada}
+	% 2\textordfeminine Avaliação - Segunda Chamada
+	% npc 2 %+ nef
+	% NEF
+\end{center}
+%\begin{multicols}{2}
+Responda [V] para Verdadeiro e [F] para Falso.
+\begin{enumerate}
+    \item Da afirmação "Se Maria for à praia, então ela irá ao cinema", podemos concluir que:
+    \begin{enumerate}
+        \item ( ) Maria vai à praia ou não vai ao cinema.
+        \item ( ) Se Maria for ao cinema, então ela irá à praia.
+        \item ( ) Se Maria não for à praia, então ela não irá ao cinema.
+        \item ( ) Se Maria não for ao cinema, então ela não irá à praia.
+        \item ( ) Maria ir à praia é condição necessária e suficiente para ela ir ao cinema.
+    \end{enumerate}
+
+    \item Sejam $A$ e $B$ conjuntos quaisquer e $A \subset B$. Podemos \textbf{sempre} afirmar que:
+    \begin{enumerate}
+        \item ( ) $(\forall x)[x \in A \land x \in B]$
+        \item ( ) $(\forall x)[x \in A \rightarrow x \in B]$
+        \item ( ) $(\exists x)[x \in A \lor x \in B]$
+        \item ( ) $(\forall x)[x \notin A \rightarrow x \notin B]$
+        \item ( ) $(\forall x)[x \notin B \rightarrow x \notin A]$
+    \end{enumerate}
+
+    \item A afirmação "Não é verdade que todos os alunos do curso de Estatística são inteligentes ou ricos" é equivalente a quais das seguintes afirmações? ( V-equivalente, F-não equivalente)
+    \begin{enumerate}
+        \item ( ) "Todos os alunos do curso de Estatística não são inteligentes e ricos."
+        \item ( ) "Existe aluno do curso de Estatística que não é inteligente ou é rico."
+        \item ( ) "Algum aluno do curso de Estatística não é inteligente ou não é rico."
+        \item ( ) "Há aluno do curso de Estatística que não é inteligente e não é rico."
+        \item ( ) "Todos os alunos do curso de Estatística não são inteligentes ou não são ricos."
+    \end{enumerate}
+
+    \item Sejam os conjuntos $X=\{0,1,2\}$, $Y = \{0,1,2,\{0,1,2\}\}$, $Z=\{\emptyset, X\}$ . 		      
+        \begin{enumerate}
+            \item ( ) $Z \cap Y = X$
+            \item ( ) $X \in Y \wedge X \subsetneq Y$
+            \item ( ) $X - Z = \emptyset$
+            \item ( ) $\#Y - \#Z = \#(X-Y)$  -- ($\#A$ é o número de elementos do conjunto $A$)
+            \item ( ) $ \emptyset \subset Z$
+        \end{enumerate}
+
+    \item Demonstre usando:
+    \begin{enumerate}
+        \item Raciocínio dedutivo: 
+         $$  (p \rightarrow q) \land (p \rightarrow \sim q) \Rightarrow \sim p $$
+        \item Validade de argumentos: 
+            \begin{align*}
+	            H_1:& &B \lor C \rightarrow  B \land A,\\
+	            H_2:& &\sim B,\\
+	            \therefore & & \sim C.
+	        \end{align*}
+    \end{enumerate}
+           
+\end{enumerate}
+\end{document}
