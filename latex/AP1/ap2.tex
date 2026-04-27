@@ -1,0 +1,82 @@
+% !TeX spellcheck = pt_BR
+\documentclass[a4paper,12pt]{letter}  % tipo do documento
+%\usepackage[brazil]{babel}           % define a linguagem padrão
+\usepackage{graphicx}                % permite a inserção de figuras
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=1.5cm,vmargin=1cm]{geometry}
+\usepackage{listings} %para colocar codigos
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\setlength{\columnsep}{1.5cm}
+\setlength{\columnseprule}{0.2pt}
+
+\newcommand{\gabarito}[1]{\textbf{\begin{small} \end{small}}} %nao mostrar gabarito
+
+\begin{document}
+\thispagestyle{empty}
+
+UNIVERSIDADE FEDERAL DO CEARÁ\\
+Departamento de Estatística e Matemática Aplicada\\
+Disciplina de Elementos de Análise Combinatória cc0279.\\
+Professor: Albert Einstein F. Muritiba.\\
+Temas: Lógica e Conjuntos\\[0.2cm]
+\textbf{Nome}: \makebox[380pt]{\hrulefill} \vspace{2pt}
+
+\begin{center}
+	1º AP -- \textit{2ª Chamada}
+\end{center}
+
+Responda [V] para Verdadeiro e [F] para Falso.
+\begin{enumerate}
+    \item Da afirmação "Se João estudar muito, então ele passará no exame", podemos concluir que:
+    \begin{enumerate}
+        \item ( ) João estuda muito ou não passa no exame.
+        \item ( ) Se João passar no exame, então ele estudou muito.
+        \item ( ) Se João não estudar muito, então ele não passará no exame.
+        \item ( ) Se João não passar no exame, então ele não estudou muito.
+        \item ( ) João estudar muito é condição necessária para ele passar no exame.
+    \end{enumerate}
+
+    \item Sejam $A$ e $B$ conjuntos quaisquer tais que $A \cap B = \emptyset$ (conjuntos disjuntos). Podemos \textbf{sempre} afirmar que:
+    \begin{enumerate}
+        \item ( ) $(\forall x)[x \notin A \land x \notin B]$
+        \item ( ) $(\forall x)[x \in A \rightarrow x \notin B]$
+        \item ( ) $(\exists x)[x \in A \land x \in B]$
+        \item ( ) $(\forall x)[x \in B \rightarrow x \notin A]$
+        \item ( ) $(\forall x)[x \notin A \rightarrow x \in B]$
+    \end{enumerate}
+
+    \item A afirmação "Não é verdade que todos os cientistas de dados sabem programar e entendem de negócios" é equivalente a quais das seguintes afirmações? (V-equivalente, F-não equivalente)
+    \begin{enumerate}
+        \item ( ) "Todos os cientistas de dados não sabem programar ou não entendem de negócios."
+        \item ( ) "Existe cientista de dados que não sabe programar e não entende de negócios."
+        \item ( ) "Algum cientista de dados não sabe programar ou não entende de negócios."
+        \item ( ) "Há cientista de dados que sabe programar mas não entende de negócios."
+        \item ( ) "Nenhum cientista de dados sabe programar e entende de negócios."
+    \end{enumerate}
+
+    \item Sejam os conjuntos $X=\{a,b,c\}$, $Y = \{a,b,c,\{a,b,c\}\}$, $Z=\{\emptyset, X\}$ .
+    \begin{enumerate}
+        \item ( ) $Y \cap Z = \{X\}$
+        \item ( ) $X \in Y \wedge X \subsetneq Y$
+        \item ( ) $X - Y = \emptyset$
+        \item ( ) $\#Y - \#Z = \#(X \cap Y)$  \hspace{1cm}  ($\#$ denota o número de elementos do conjunto)
+        \item ( ) $ \emptyset \in Z \wedge \emptyset \subset Z$
+    \end{enumerate}
+
+    \item Demonstre usando:
+    \begin{enumerate}
+        \item Raciocínio dedutivo 
+         $$  (p \rightarrow q) \land (p \rightarrow \sim q) \Leftrightarrow \sim p $$
+        \item Validade de argumentos: 
+            \begin{align*}
+	            H_1:& & P \rightarrow Q \lor R,\\
+	            H_2:& & \sim Q \land \sim R,\\
+	            \therefore & & \sim P.
+	        \end{align*}
+    \end{enumerate}
+           
+\end{enumerate}
+\end{document}
