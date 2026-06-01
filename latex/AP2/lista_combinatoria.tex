@@ -1,0 +1,105 @@
+\documentclass[a4paper,12pt]{letter}  % tipo do documento
+\usepackage[brazil]{babel}           % define a linguagem padrão
+\usepackage{graphicx}                % permite a inserção de figuras
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=2cm,vmargin=2cm]{geometry}
+\usepackage{listings} %para colocar codigos
+\usepackage{amsmath}
+\usepackage{amssymb}
+\lstset{numbers=left,
+stepnumber=1,
+firstnumber=1,
+numberstyle=\tiny,
+extendedchars=true,
+breaklines=true,
+frame=tb,
+basicstyle=\footnotesize,
+}
+
+\newcommand{\gabarito}[1]{\textbf{\begin{small} \end{small}}} %nao mostrar gabarito
+
+\begin{document}
+UNIVERSIDADE FEDERAL DO CEARÁ\\
+Departamento Estatística e Matemática Aplicada\\
+Disciplina de Elementos de Análise Combinatória\\
+Professor: Albert Einstein F. Muritiba.\\
+
+\begin{center}
+	Lista de exercícios - Combinatória
+\end{center}
+
+\begin{enumerate}
+    % 2.1 Introdução
+	\item Quantas palavras contendo 3 letras diferentes podem ser formadas com um alfabeto de 26 letras?
+	\item Quantos são os gabaritos possíveis de um teste de 10 questões de múltipla-escolha, com cinco alternativas por questão?
+	\item De quantos modos diferentes podem ser escolhidos um presidente e um secretário de um conselho que tem 12 membros?
+    
+    % 2.2 Permutações Simples
+	\item De quantos modos é possivel sentar 7 pessoas em cadeiras em fila de modo que duas determinadas pessoas dessas 7 não fiquem juntas?
+	\item De quantos modos é possivel colocar em uma prateleira 5 livros de matemática, 3 de física e 2 de estatística, de modo que livros de um mesmo assunto permaneçam juntos?
+	\item De quantos modos $r$ rapazes e $m$ moças podem se colocar em fila de modo que as moças fiquem juntas?
+    
+    % 2.3 Combinações Simples
+	\item Uma comissão formada por 3 homens e 3 mulheres deve ser escolhida em um grupo de 8 homens e 5 mulheres.
+	\begin{enumerate}
+        \item Quantas comissões podem ser formadas?
+        \item Qual seria a resposta se um dos homens não aceitasse participar da comissão se nela estivesse determinada mulher?
+    \end{enumerate}
+	\item Para a seleção brasileira foram convocados dois goleiros, 6 zagueiros, 7 meios de campo e 4 atacantes. De quantos modos é possível escalar a seleção com 1 goleiro, 4 zagueiros, 4 meios de campo e 2 atacantes?
+	\item Quantas diagonais possui um polígono de $n$ lados?
+
+    % 2.4 Permutações Circulares
+	\item De quantos modos 5 meninos e 5 meninas podem formar uma roda de ciranda de modo que pessoas de mesmo sexo não fiquem juntas?
+	\item De quantos modos $n$ casais podem formar uma roda de ciranda de modo que cada homem permaneça ao lado de sua mulher?
+
+    % 2.5 Permutações com repetição
+	\item A figura representa o mapa de uma cidade, na qual há 7 avenidas na direção norte-sul e 6 avenidas na direção leste-oeste.
+	\begin{enumerate}
+        \item Quantos são os trajetos de comprimento mínimo ligando o ponto do extremo inferior esquerdo ao extremo superior direito?
+    \end{enumerate}
+	\item Quantos números de 7 dígitos, maiores que 6000000, podem ser formados usando apenas os algarismos 1, 3, 6, 6, 6, 8, 8?
+	\item Quantos números de 5 algarismos podem ser formados usando apenas os algarismos 1, 1, 1, 1, 2 e 3?
+
+    % 2.6 Combinações Completas
+	\item Quantas são as soluções inteiras não-negativas de $x+y+z+w=3$?
+	\item Quantas são as soluções inteiras positivas de $x+y+z=10$?
+	\item A fábrica X produz 8 tipos de bombons que são vendidos em caixas de 30 bombons (de um mesmo tipo ou sortidos). Quantas caixas diferentes podem ser formadas?
+
+    % 3.1 Princípio da Inclusão-Exclusão
+	\item Quantos inteiros entre 1 e 1000 inclusive:
+	\begin{enumerate}
+        \item são divisiveis por pelo menos três dos números 2, 3, 7 e 10?
+        \item não são divisiveis por nenhum dos números 2, 3, 7 e 10?
+        \item são divisiveis por exatamente um dos números 2, 3, 7 e 10?
+        \item são divisiveis por pelo menos um dos números 2, 3, 7 e 10?
+    \end{enumerate}
+	\item Quantas são as soluções inteiros não-negativas de $x+y+z=12$ nas quais pelo menos uma incógnita é maior que 7?
+
+    % 3.2 Permutações Caóticas
+	\item Quantas são as permutações de $(1, 2, 3, 4, 5, 6, 7)$ que têm exatamente 3 elementos no seu lugar primitivo?
+	\item Dois médicos devem examinar, durante uma mesma hora, 6 pacientes, gastando 10 minutos com cada paciente. Cada um dos 6 pacientes deve ser examinado pelos dois médicos. De quantos modos pode ser feito um horário compatível?
+
+    % 3.3 Kaplansky
+	\item 5 pessoas devem se sentar em 15 cadeiras colocadas em torno de uma mesa circular. De quantos modos isso pode ser feito se não deve haver ocupação simultânea de duas cadeiras adjacentes?
+	\item De quantos modos é possível formar uma roda de ciranda com 7 meninas e 12 meninos sem que haja duas meninas em posições adjacentes?
+
+    % 3.4 Reflexão
+	\item Numa fila de cinema, $m$ pessoas tem notas de R\$ 5,00 e $n (n<m)$ pessoas tem notas de R\$ 10,00. A entrada custa R\$ 5,00.
+	\begin{enumerate}
+        \item Quantas são as filas possíveis?
+        \item Quantas são as filas que terão problemas de troco se a bilheteria começa a trabalhar sem troco?
+    \end{enumerate}
+	\item Numa eleição com dois candidatos A e B, há 20 eleitores e o candidato A vence por 15 x 5. Quantas são as marchas da apuração:
+	\begin{enumerate}
+        \item Possíveis?
+        \item Nas quais o candidato A permanece em vantagem (nem sequer empata) desde o primeiro voto apurado?
+    \end{enumerate}
+
+    % 3.5 Dirichlet
+	\item Em uma gaveta há 12 meias brancas e 12 meias pretas. Quantas meias devemos retirar ao acaso para termos certeza de obter um par de meias da mesma cor?
+	\item Qual é o número mínimo de pessoas que deve haver em um grupo para que possamos garantir que nele haja pelo menos 5 pessoas nascidas no mesmo mês?
+
+\end{enumerate}
+
+\end{document}
