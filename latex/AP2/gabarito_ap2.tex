@@ -1,0 +1,128 @@
+% !TeX spellcheck = pt_BR
+\documentclass[a4paper,12pt]{letter}  % tipo do documento
+%\usepackage[brazil]{babel}           % define a linguagem padrão
+\usepackage{graphicx}                % permite a inserção de figuras
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=1.5cm,vmargin=1.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\thispagestyle{empty}
+
+UNIVERSIDADE FEDERAL DO CEARÁ\\
+Departamento de Estatística e Matemática Aplicada\\
+Disciplina de Elementos de Análise Combinatória cc0279.\\
+Professor: Albert Einstein F. Muritiba.\\
+\textbf{Gabarito Oficial - 2º AP} \\[0.2cm]
+
+\begin{enumerate}
+    \item \textbf{Defina e diferencie conceitualmente os tipos de agrupamento: permutações (simples, com repetição, circulares e caóticas) e combinações (simples e completas).}
+    
+    \textbf{Solução:}
+    
+    \begin{itemize}
+        \item \textbf{Definições}:
+        \begin{itemize}
+            \item \textbf{Permutação simples}: Ordenação de $n$ objetos distintos em uma fila linear. Fórmula: $P_n = n!$.
+            \item \textbf{Permutação com repetição}: Ordenação de $n$ objetos em fila linear, onde alguns elementos são idênticos entre si (com frequências de repetição $a, b, \dots$). Fórmula: $P_n^{a,b, \dots} = \frac{n!}{a!b!\dots}$.
+            \item \textbf{Permutação circular}: Ordenação de $n$ objetos distintos dispostos em círculo, onde apenas a posição relativa dos elementos importa (desconsiderando rotações). Fórmula: $PC_n = (n-1)!$.
+            \item \textbf{Permutação caótica (desarranjo)}: Permutação de $n$ elementos ordenados de modo que nenhum elemento ocupe sua posição original. Fórmula: $D_n = n! \sum_{k=0}^n \frac{(-1)^k}{k!}$.
+            \item \textbf{Combinação simples}: Escolha de um subconjunto de $p$ elementos a partir de um conjunto de $n$ elementos distintos, onde a ordem da escolha não importa. Fórmula: $C_n^p = \binom{n}{p} = \frac{n!}{p!(n-p)!}$.
+            \item \textbf{Combinação completa (com repetição)}: Escolha de $p$ elementos de um conjunto com $n$ tipos de elementos disponíveis, onde cada tipo pode ser repetido e a ordem de escolha não importa. Fórmula: $CR_n^p = \binom{n+p-1}{p}$.
+        \end{itemize}
+        \item \textbf{Diferenciação}: 
+        A diferença fundamental entre \textbf{permutações} e \textbf{combinações} é que nas permutações a ordem dos elementos no agrupamento importa (formam-se filas/sequências), ao passo que nas combinações a ordem de escolha não importa (formam-se subconjuntos).
+    \end{itemize}
+
+    \item \textbf{Explique em que tipo de problemas de contagem aplicam-se os Lemas de Kaplansky, diferenciando as situações que exigem o uso de cada um dos dois lemas.}
+    
+    \textbf{Solução:}
+    
+    Os Lemas de Kaplansky são aplicados em problemas onde deseja-se escolher $p$ elementos não adjacentes (ou seja, que não sejam consecutivos) a partir de um conjunto ordenado de $n$ elementos. A diferença de aplicação entre eles é:
+    \begin{itemize}
+        \item \textbf{Primeiro Lema de Kaplansky}: Aplica-se quando os $n$ elementos originais estão organizados de forma \textbf{linear} (em fila/linha reta), de forma que o primeiro e o último elemento não são adjacentes. O número de maneiras é:
+        \[ f(n,p) = \binom{n-p+1}{p} \]
+        \item \textbf{Segundo Lema de Kaplansky}: Aplica-se quando os $n$ elementos originais estão organizados de forma \textbf{circular} (em anel/círculo), o que significa que o primeiro e o último elemento são considerados adjacentes. O número de maneiras é:
+        \[ g(n,p) = \frac{n}{n-p} \binom{n-p}{p} \]
+    \end{itemize}
+
+    \item \textbf{Em um restaurante de \textit{fast-food}, os pratos são montados a partir de 16 opções de ingredientes sólidos, 4 de molhos e 4 de massas. De quantos modos distintos pode-se montar um prato contendo 8 ingredientes sólidos, 2 molhos e 1 massa, sabendo que ingredientes e molhos podem ser repetidos?}
+    
+    \textbf{Solução:}
+    
+    Pelo Princípio Multiplicativo, o processo de montagem pode ser dividido em três etapas independentes:
+    \begin{enumerate}
+        \item \textbf{Escolha dos 8 ingredientes sólidos}: São 16 opções disponíveis, a escolha pode ser repetida e a ordem de inserção no prato não importa. Trata-se de uma combinação completa (com repetição) de 16 elementos tomados 8 a 8:
+        \[ CR_{16}^8 = \binom{16+8-1}{8} = \binom{23}{8} = \frac{23!}{8!15!} = 490.314 \]
+        \item \textbf{Escolha dos 2 molhos}: São 4 opções, permitindo repetições e sem importar a ordem. É uma combinação completa de 4 elementos tomados 2 a 2:
+        \[ CR_{4}^2 = \binom{4+2-1}{2} = \binom{5}{2} = 10 \]
+        \item \textbf{Escolha de 1 massa}: São 4 opções simples disponíveis:
+        \[ \binom{4}{1} = 4 \]
+    \end{enumerate}
+    Multiplicando as possibilidades de cada etapa, obtemos o total de pratos distintos:
+    \[ \text{Total} = CR_{16}^8 \times CR_{4}^2 \times 4 = 490.314 \times 10 \times 4 = 19.612.560 \]
+    
+    \textbf{Resposta:} $19.612.560$ modos distintos.
+
+    \item \textbf{Uma comissão formada por 2 homens e 2 mulheres deve ser escolhida em um grupo de 10 homens e 8 mulheres. De quantos modos diferentes essa comissão pode ser formada se um determinado homem não aceita participar da comissão se nela estiver presente uma determinada mulher?}
+    
+    \textbf{Solução:}
+    
+    Podemos resolver subtraindo os casos proibidos do número total de comissões possíveis:
+    \begin{enumerate}
+        \item \textbf{Total de comissões possíveis sem restrições}: Escolhemos 2 homens de 10 e 2 mulheres de 8:
+        \[ \text{Total} = \binom{10}{2} \times \binom{8}{2} = 45 \times 28 = 1.260 \]
+        \item \textbf{Total de comissões proibidas}: São aquelas em que participam conjuntamente o homem determinado ($H_1$) e a mulher determinada ($M_1$). Para compor essas comissões, fixamos $H_1$ e $M_1$ e completamos as vagas restantes:
+        \begin{itemize}
+            \item Resta escolher 1 homem entre os 9 restantes: $\binom{9}{1} = 9$.
+            \item Resta escolher 1 mulher entre as 7 restantes: $\binom{7}{1} = 7$.
+            \item Total de comissões com ambos: $9 \times 7 = 63$.
+        \end{itemize}
+    \end{enumerate}
+    Subtraindo os casos proibidos do total geral:
+    \[ \text{Comissões permitidas} = 1.260 - 63 = 1.197 \]
+    
+    \textbf{Resposta:} $1.197$ modos diferentes.
+
+    \item \textbf{Determine a quantidade de números inteiros de 1 a 1000, inclusive, que são divisíveis por pelo menos dois dos números 2, 3 e 21.}
+    
+    \textbf{Solução:}
+    
+    Seja $\Omega = \{1, 2, \dots, 1000\}$ com $|\Omega| = 1000$. Definimos os conjuntos de divisibilidade em $\Omega$:
+    \begin{itemize}
+        \item $A_2$: números divisíveis por 2 (múltiplos de 2).
+        \item $A_3$: números divisíveis por 3 (múltiplos de 3).
+        \item $A_{21}$: números divisíveis por 21 (múltiplos de 21).
+    \end{itemize}
+    Como $21$ é múltiplo de $3$, qualquer número divisível por $21$ também é divisível por $3$. Portanto, $A_{21} \subset A_3$.
+    
+    Queremos a quantidade de números divisíveis por pelo menos dois dos números $\{2, 3, 21\}$. As duplas de divisibilidade possíveis são:
+    \begin{enumerate}
+        \item Divisíveis por 2 e 3: múltiplos de $\text{mmc}(2, 3) = 6$ (conjunto $A_6$).
+        \item Divisíveis por 3 e 21: como $A_{21} \subset A_3$, qualquer múltiplo de 21 é automaticamente múltiplo de 3. Essa dupla é descrita por $A_{21}$.
+        \item Divisíveis por 2 e 21: múltiplos de $\text{mmc}(2, 21) = 42$ (conjunto $A_{42}$).
+    \end{enumerate}
+    A união dessas condições descreve o conjunto desejado:
+    \[ (A_2 \cap A_3) \cup (A_3 \cap A_{21}) \cup (A_2 \cap A_{21}) = A_6 \cup A_{21} \cup A_{42} \]
+    Como $42$ é múltiplo tanto de 6 quanto de 21, temos $A_{42} \subset A_6$ e $A_{42} \subset A_{21}$. Logo, a união simplifica-se para:
+    \[ A_6 \cup A_{21} \]
+    Pelo Princípio da Inclusão-Exclusão:
+    \[ |A_6 \cup A_{21}| = |A_6| + |A_{21}| - |A_6 \cap A_{21}| \]
+    Como $A_6 \cap A_{21} = A_{42}$ (pois $\text{mmc}(6, 21) = 42$):
+    \[ |A_6 \cup A_{21}| = |A_6| + |A_{21}| - |A_{42}| \]
+    Calculando as quantidades de múltiplos no intervalo $[1, 1000]$:
+    \begin{itemize}
+        \item $|A_6| = \lfloor 1000 / 6 \rfloor = 166$
+        \item $|A_{21}| = \lfloor 1000 / 21 \rfloor = 47$
+        \item $|A_{42}| = \lfloor 1000 / 42 \rfloor = 23$
+    \end{itemize}
+    Substituindo na fórmula:
+    \[ \text{Total} = 166 + 47 - 23 = 190 \]
+    
+    \textbf{Resposta:} $190$ números inteiros.
+
+\end{enumerate}
+
+\end{document}
