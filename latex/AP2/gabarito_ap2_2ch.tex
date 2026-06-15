@@ -1,0 +1,211 @@
+% !TeX spellcheck = pt_BR
+\documentclass[a4paper,12pt]{letter}  % tipo do documento
+%\usepackage[brazil]{babel}           % define a linguagem padrão
+\usepackage{graphicx}                % permite a inserção de figuras
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=1.5cm,vmargin=1.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\thispagestyle{empty}
+
+UNIVERSIDADE FEDERAL DO CEARÁ\\
+Departamento de Estatística e Matemática Aplicada\\
+Disciplina de Elementos de Análise Combinatória cc0279.\\
+Professor: Albert Einstein F. Muritiba.\\
+\textbf{Gabarito Oficial - 2º AP (Segunda Chamada)} \\[0.2cm]
+
+\begin{enumerate}
+    \item \textbf{Explique como o conceito de Combinações Completas (com repetição) $CR_n^p$ está relacionado ao número de soluções inteiras não negativas de uma equação de somatório da forma $x_1 + x_2 + \dots + x_n = p$.}
+    
+    \textbf{Solução:}
+    
+    O conceito de Combinação Completa ($CR_n^p$) consiste em escolher $p$ objetos a partir de $n$ tipos distintos disponíveis, onde a ordem da escolha não importa e é permitida a repetição de objetos de um mesmo tipo.
+    
+    Podemos estabelecer uma bijeção direta entre cada escolha possível e uma solução inteira da equação de somatório $x_1 + x_2 + \dots + x_n = p$:
+    \begin{itemize}
+        \item Definimos a variável inteira $x_i$ como a quantidade de objetos escolhidos do tipo $i$, para cada $i \in \{1, 2, \dots, n\}$.
+        \item Como a quantidade de objetos de cada tipo não pode ser negativa, temos a restrição $x_i \ge 0$ para todo $i$.
+        \item A soma das quantidades de todos os tipos escolhidos deve ser igual ao total de objetos a escolher ($p$), gerando a equação $x_1 + x_2 + \dots + x_n = p$.
+    \end{itemize}
+    Dessa forma, cada escolha distinta de objetos (combinação completa) corresponde a uma única solução em números inteiros não negativos da equação de somatório. Portanto, o número de soluções dessa equação é exatamente dado por $CR_n^p = \binom{n+p-1}{p}$.
+
+    \item \textbf{Uma comissão de 5 deputados deve ser escolhida a partir de um conjunto de 18 deputados sentados ao redor de uma mesa circular.}
+    \begin{enumerate}
+        \item \textbf{De quantas maneiras a comissão pode ser formada se nenhum par de deputados escolhidos puder estar sentado em posições consecutivas (adjacentes)?}
+        \item \textbf{Suponha que dois deputados específicos que são desafetos políticos (deputado A e deputado B) estão sentados em posições tais que há exatamente 8 deputados entre eles em cada um dos dois caminhos ao redor da mesa. Sabendo que A e B não podem fazer parte da comissão simultaneamente, de quantos modos a comissão pode ser formada respeitando também essa restrição?}
+    \end{enumerate}
+    
+    \textbf{Solução:}
+    
+    \begin{enumerate}
+        \item Aplicando diretamente o \textbf{Segundo Lema de Kaplansky} para $n = 18$ deputados dispostos em círculo e $p = 5$ a serem escolhidos sem adjacências:
+        \[ g(18, 5) = \frac{18}{18-5} \binom{18-5}{5} = \frac{18}{13} \binom{13}{5} = \frac{18}{13} \times 1287 = 18 \times 99 = 1782 \]
+        \textbf{Resposta:} $1.782$ maneiras.
+        
+        \item Para resolver este item, podemos subtrair do total do item anterior ($1.782$) as comissões proibidas, que são aquelas que contêm \textbf{ambos} os deputados A e B.
+        Suponha que A e B são escolhidos. Devemos selecionar mais 3 deputados entre os 16 restantes de modo que ninguém seja adjacente:
+        \begin{itemize}
+            \item Como A é escolhido, os seus 2 vizinhos imediatos não podem ser escolhidos.
+            \item Como B é escolhido, os seus 2 vizinhos imediatos não podem ser escolhidos.
+            \item Isso remove 6 pessoas (A, B e seus respectivos 4 vizinhos) das opções para as 3 vagas restantes.
+            \item Como há 8 deputados entre A e B em cada lado da mesa, os vizinhos de A e B não se sobrepõem. Assim, restam dois segmentos lineares isolados de deputados elegíveis:
+            \begin{itemize}
+                \item Cada lado possui originalmente 8 deputados. Removendo o vizinho de A e o vizinho de B de cada lado, restam $8 - 2 = 6$ deputados disponíveis de cada lado.
+                \item Temos, portanto, dois segmentos lineares (Segmento 1 e Segmento 2), cada um com 6 deputados.
+            \end{itemize}
+            \item Devemos escolher 3 deputados adicionais a partir desses dois segmentos sem adjacências. As possibilidades de distribuição das 3 escolhas entre os dois segmentos são:
+            \begin{itemize}
+                \item \textbf{3 no Segmento 1 e 0 no Segmento 2}: Pelo Primeiro Lema de Kaplansky:
+                \[ f(6, 3) \times f(6, 0) = \binom{6-3+1}{3} \times 1 = \binom{4}{3} = 4 \]
+                \item \textbf{2 no Segmento 1 e 1 no Segmento 2}:
+                \[ f(6, 2) \times f(6, 1) = \binom{6-2+1}{2} \times \binom{6-1+1}{1} = \binom{5}{2} \times 6 = 10 \times 6 = 60 \]
+                \item \textbf{1 no Segmento 1 e 2 no Segmento 2}: Por simetria:
+                \[ f(6, 1) \times f(6, 2) = 60 \]
+                \item \textbf{0 no Segmento 1 e 3 no Segmento 2}: Por simetria:
+                \[ f(6, 0) \times f(6, 3) = 4 \]
+            \end{itemize}
+            \item O número de comissões contendo A e B simultaneamente é a soma dessas possibilidades:
+            \[ \text{Proibidas} = 4 + 60 + 60 + 4 = 128 \]
+        \end{itemize}
+        Subtraindo do total de comissões sem adjacências:
+        \[ \text{Comissões permitidas} = 1782 - 128 = 1654 \]
+        \textbf{Resposta:} $1.654$ modos.
+    \end{enumerate}
+
+    \item \textbf{De quantas maneiras é possível distribuir 20 esferas idênticas em 4 caixas distintas (identificadas como A, B, C e D) sabendo que:}
+    \begin{enumerate}
+        \item \textbf{Cada caixa deve receber pelo menos 2 esferas.}
+        \item \textbf{A caixa A deve receber no máximo 5 esferas (sem a restrição do item a, apenas que cada caixa receba pelo menos 0 esferas).}
+    \end{enumerate}
+    
+    \textbf{Solução:}
+    
+    Este problema pode ser modelado pelo número de soluções inteiras da equação:
+    \[ x_A + x_B + x_C + x_D = 20 \]
+    onde $x_i$ representa a quantidade de esferas na caixa $i$. Como as esferas são idênticas e as caixas distintas, trata-se de um problema clássico de Combinação Completa.
+    
+    \begin{enumerate}
+        \item Queremos soluções inteiras tais que $x_i \ge 2$ para toda caixa $i \in \{A, B, C, D\}$.
+        Fazemos a mudança de variáveis $x_i = y_i + 2$, com $y_i \ge 0$. Substituindo na equação:
+        \[ (y_A + 2) + (y_B + 2) + (y_C + 2) + (y_D + 2) = 20 \]
+        \[ y_A + y_B + y_C + y_D = 12 \]
+        O número de soluções inteiras não negativas é dado por:
+        \[ CR_4^{12} = \binom{4+12-1}{12} = \binom{15}{12} = \binom{15}{3} = \frac{15 \times 14 \times 13}{3 \times 2 \times 1} = 455 \]
+        \textbf{Resposta:} $455$ maneiras.
+        
+        \item Queremos soluções inteiras não negativas ($x_i \ge 0$) tais que $x_A \le 5$.
+        Podemos resolver subtraindo do total de distribuições sem restrições os casos em que a caixa A recebe 6 ou mais esferas:
+        \begin{itemize}
+            \item \textbf{Total sem restrições ($x_i \ge 0$)}:
+            \[ CR_4^{20} = \binom{4+20-1}{20} = \binom{23}{20} = \binom{23}{3} = \frac{23 \times 22 \times 21}{3 \times 2 \times 1} = 1771 \]
+            \item \textbf{Casos proibidos ($x_A \ge 6$)}:
+            Fazemos $x_A = y_A + 6$, com $y_A \ge 0$. As outras variáveis continuam com $x_i \ge 0$.
+            \[ (y_A + 6) + x_B + x_C + x_D = 20 \implies y_A + x_B + x_C + x_D = 14 \]
+            O número de soluções é:
+            \[ CR_4^{14} = \binom{4+14-1}{14} = \binom{17}{14} = \binom{17}{3} = \frac{17 \times 16 \times 15}{3 \times 2 \times 1} = 680 \]
+        \end{itemize}
+        Subtraindo os casos proibidos do total:
+        \[ \text{Total permitido} = 1771 - 680 = 1091 \]
+        \textbf{Resposta:} $1.091$ maneiras.
+    \end{enumerate}
+
+    \item \textbf{Uma comissão de 6 pessoas deve ser escolhida de um grupo composto por 10 professores e 8 alunos. A comissão deve conter pelo menos 2 professores e pelo menos 2 alunos. Além disso, dois professores específicos (A e B) recusam-se a trabalhar juntos (não podem estar ambos na comissão), e um aluno específico (C) só aceita participar se o professor A também for escolhido para a comissão. De quantos modos essa comissão pode ser formada?}
+    
+    \textbf{Solução:}
+    
+    Seja a comissão formada por $n_P$ professores e $n_A$ alunos, com $n_P + n_A = 6$, $n_P \ge 2$, e $n_A \ge 2$. As composições possíveis de (Professores, Alunos) são: $(2,4)$, $(3,3)$ e $(4,2)$.
+    
+    Analisaremos as comissões válidas com base na participação do trio $\{A, B, C\}$. A restrição diz que:
+    - A e B não podem estar juntos.
+    - Se C está na comissão, então A deve estar na comissão. (Equivale a: se A não está, C não está).
+    
+    Dividimos o problema em três casos mutuamente exclusivos:
+    
+    \textbf{Caso 1: A e B estão fora da comissão (A excluído, B excluído)}
+    Como A está fora, C obrigatoriamente está fora da comissão.
+    Assim, devemos escolher as 6 pessoas entre os 8 professores restantes (excluindo A e B) e os 7 alunos restantes (excluindo C).
+    \begin{itemize}
+        \item \textbf{Composição (2,4)}: $\binom{8}{2} \times \binom{7}{4} = 28 \times 35 = 980$
+        \item \textbf{Composição (3,3)}: $\binom{8}{3} \times \binom{7}{3} = 56 \times 35 = 1960$
+        \item \textbf{Composição (4,2)}: $\binom{8}{4} \times \binom{7}{2} = 70 \times 21 = 1470$
+        \item Total do Caso 1 = $980 + 1960 + 1470 = 4410$.
+    \end{itemize}
+
+    \textbf{Caso 2: B está na comissão e A está fora (B incluído, A excluído)}
+    Como A está fora, C obrigatoriamente está fora.
+    O professor B já ocupa 1 vaga de professor. Devemos escolher os outros membros entre os 8 professores restantes e os 7 alunos restantes.
+    \begin{itemize}
+        \item \textbf{Composição (2,4)}: Escolhemos 1 professor adicional e 4 alunos: $\binom{8}{1} \times \binom{7}{4} = 8 \times 35 = 280$
+        \item \textbf{Composição (3,3)}: Escolhemos 2 professores adicionais e 3 alunos: $\binom{8}{2} \times \binom{7}{3} = 28 \times 35 = 980$
+        \item \textbf{Composição (4,2)}: Escolhemos 3 professores adicionais e 2 alunos: $\binom{8}{3} \times \binom{7}{2} = 56 \times 21 = 1176$
+        \item Total do Caso 2 = $280 + 980 + 1176 = 2436$.
+    \end{itemize}
+
+    \textbf{Caso 3: A está na comissão e B está fora (A incluído, B excluído)}
+    Como A está incluído, o aluno C pode ou não participar. Dividimos este caso em dois subcasos:
+    \begin{itemize}
+        \item \textbf{Subcaso 3.1: C está na comissão (A incluído, B excluído, C incluído)}
+        A ocupa 1 vaga de professor e C ocupa 1 vaga de aluno. Resta escolher as outras 4 vagas do grupo de 8 professores restantes e 7 alunos restantes.
+        \begin{itemize}
+            \item Composição (2,4) se torna (1 professor adicional, 3 alunos adicionais): $\binom{8}{1} \times \binom{7}{3} = 8 \times 35 = 280$
+            \item Composição (3,3) se torna (2 professores adicionais, 2 alunos adicionais): $\binom{8}{2} \times \binom{7}{2} = 28 \times 21 = 588$
+            \item Composição (4,2) se torna (3 professores adicionais, 1 aluno adicional): $\binom{8}{3} \times \binom{7}{1} = 56 \times 7 = 392$
+            \item Total do Subcaso 3.1 = $280 + 588 + 392 = 1260$.
+        \end{itemize}
+        \item \textbf{Subcaso 3.2: C está fora da comissão (A incluído, B excluído, C excluído)}
+        A ocupa 1 vaga de professor, B e C estão fora. Escolhemos as outras 5 vagas entre 8 professores restantes e 7 alunos restantes.
+        \begin{itemize}
+            \item Composição (2,4) se torna (1 professor adicional, 4 alunos adicionais): $\binom{8}{1} \times \binom{7}{4} = 8 \times 35 = 280$
+            \item Composição (3,3) se torna (2 professores adicionais, 3 alunos adicionais): $\binom{8}{2} \times \binom{7}{3} = 28 \times 35 = 980$
+            \item Composição (4,2) se torna (3 professores adicionais, 2 alunos adicionais): $\binom{8}{3} \times \binom{7}{2} = 56 \times 21 = 1176$
+            \item Total do Subcaso 3.2 = $280 + 980 + 1176 = 2436$.
+        \end{itemize}
+        \item Total do Caso 3 = $1260 + 2436 = 3696$.
+    \end{itemize}
+
+    Somando todos os casos possíveis:
+    \[ \text{Total Geral} = 4410 + 2436 + 3696 = 10.542 \]
+    \textbf{Resposta:} $10.542$ modos.
+
+    \item \textbf{Determine a quantidade de números inteiros de 1 a 1000, inclusive, que são divisíveis por:}
+    \begin{enumerate}
+        \item \textbf{Pelo menos um dos números 4, 6 e 10.}
+        \item \textbf{Exatamente dois dos números 4, 6 e 10.}
+    \end{enumerate}
+    
+    \textbf{Solução:}
+    
+    Seja $\Omega = \{1, 2, \dots, 1000\}$ com $|\Omega| = 1000$. Definimos os conjuntos:
+    - $A_4$: múltiplos de 4 no intervalo. $|A_4| = \lfloor 1000/4 \rfloor = 250$.
+    - $A_6$: múltiplos de 6 no intervalo. $|A_6| = \lfloor 1000/6 \rfloor = 166$.
+    - $A_{10}$: múltiplos de 10 no intervalo. $|A_{10}| = \lfloor 1000/10 \rfloor = 100$.
+    
+    Agora, calculamos as interseções usando os mínimos múltiplos comuns (mmc):
+    - $|A_4 \cap A_6| = |A_{\text{mmc}(4,6)}| = |A_{12}| = \lfloor 1000/12 \rfloor = 83$.
+    - $|A_4 \cap A_{10}| = |A_{\text{mmc}(4,10)}| = |A_{20}| = \lfloor 1000/20 \rfloor = 50$.
+    - $|A_6 \cap A_{10}| = |A_{\text{mmc}(6,10)}| = |A_{30}| = \lfloor 1000/30 \rfloor = 33$.
+    - $|A_4 \cap A_6 \cap A_{10}| = |A_{\text{mmc}(4,6,10)}| = |A_{60}| = \lfloor 1000/60 \rfloor = 16$.
+    
+    Calculamos os termos da Inclusão-Exclusão:
+    - $S_1 = |A_4| + |A_6| + |A_{10}| = 250 + 166 + 100 = 516$.
+    - $S_2 = |A_{12}| + |A_{20}| + |A_{30}| = 83 + 50 + 33 = 166$.
+    - $S_3 = |A_{60}| = 16$.
+    
+    \begin{enumerate}
+        \item Pelo Princípio da Inclusão-Exclusão, o número de elementos divisíveis por pelo menos um deles é:
+        \[ |A_4 \cup A_6 \cup A_{10}| = S_1 - S_2 + S_3 = 516 - 166 + 16 = 366 \]
+        \textbf{Resposta:} $366$ números inteiros.
+        
+        \item Para encontrar o número de elementos divisíveis por \textbf{exatamente} 2 dos números, usamos a fórmula correspondente:
+        \[ E_2 = S_2 - 3S_3 = 166 - 3(16) = 166 - 48 = 118 \]
+        Alternativamente, pelo diagrama de Venn, calculamos a soma das interseções duplas puras (excluindo a interseção tripla de cada uma):
+        \[ E_2 = (|A_{12}| - |A_{60}|) + (|A_{20}| - |A_{60}|) + (|A_{30}| - |A_{60}|) \]
+        \[ E_2 = (83 - 16) + (50 - 16) + (33 - 16) = 67 + 34 + 17 = 118 \]
+        \textbf{Resposta:} $118$ números inteiros.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,76 @@
+% !TeX spellcheck = pt_BR
+\documentclass[a4paper,12pt]{letter}  % tipo do documento
+%\usepackage[brazil]{babel}           % define a linguagem padrão
+\usepackage{graphicx}                % permite a inserção de figuras
+\usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}        % para usar caracteres acentuados diretamente
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=1.5cm,vmargin=1cm]{geometry}
+\usepackage{listings} %para colocar codigos
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\setlength{\columnsep}{1.5cm}
+\setlength{\columnseprule}{0.2pt}
+
+\newcommand{\gabarito}[1]{\textbf{\begin{small} \end{small}}} %nao mostrar gabarito
+
+\begin{document}
+\thispagestyle{empty}
+
+UNIVERSIDADE FEDERAL DO CEARÁ\\
+Departamento de Estatística e Matemática Aplicada\\
+Disciplina de Elementos de Análise Combinatória cc0279.\\
+Professor: Albert Einstein F. Muritiba.\\
+Temas: Análise Combinatória\\[0.2cm]
+\textbf{Nome}: \makebox[380pt]{\hrulefill} \vspace{2pt}
+\begin{center}
+	2º AP -- Segunda Chamada
+\end{center}        
+\begin{small}
+Resolva as questões a seguir, apresentando detalhadamente todos os cálculos, raciocínios e justificativas.
+\end{small}
+\begin{enumerate}
+    \item Explique como o conceito de Combinações Completas (com repetição) $CR_n^p$ está relacionado ao número de soluções inteiras não negativas de uma equação de somatório da forma $x_1 + x_2 + \dots + x_n = p$.
+    
+    \item Uma comissão de 5 deputados deve ser escolhida a partir de um conjunto de 18 deputados sentados ao redor de uma mesa circular.
+    \begin{enumerate}
+        \item De quantas maneiras a comissão pode ser formada se nenhum par de deputados escolhidos puder estar sentado em posições consecutivas (adjacentes)?
+        \item Suponha que dois deputados específicos que são desafetos políticos (deputado A e deputado B, os quais não estão sentados em posições consecutivas originalmente) não podem fazer parte da comissão simultaneamente. De quantos modos a comissão pode ser formada respeitando também essa restrição?
+    \end{enumerate}
+
+    \item De quantas maneiras é possível distribuir 20 esferas idênticas em 4 caixas distintas (identificadas como A, B, C e D) sabendo que:
+    \begin{enumerate}
+        \item Cada caixa deve receber pelo menos 2 esferas.
+        \item A caixa A deve receber no máximo 5 esferas (sem a restrição do item a, apenas que cada caixa receba pelo menos 0 esferas).
+    \end{enumerate}
+
+    \item Uma comissão de 6 pessoas deve ser escolhida de um grupo composto por 10 professores e 8 alunos. A comissão deve conter pelo menos 2 professores e pelo menos 2 alunos. Além disso, dois professores específicos (A e B) recusam-se a trabalhar juntos (não podem estar ambos na comissão), e um aluno específico (C) só aceita participar se o professor A também for escolhido para a comissão. De quantos modos essa comissão pode ser formada?
+
+    \item Determine a quantidade de números inteiros de 1 a 1000, inclusive, que são divisíveis por:
+    \begin{enumerate}
+        \item Pelo menos um dos números 4, 6 e 10.
+        \item Exatamente dois dos números 4, 6 e 10.
+    \end{enumerate}
+\end{enumerate}
+
+\begin{small}
+	\textbf{Fórmulas:}\\
+	$P_n = n!$\\
+	$P^{a,b, ...}_n = \frac{n!}{a!b! ...}$\\
+	$PC_n = (n-1)!$\\
+	$C^p_n = \frac{n!}{p!(n-p)!}$\\
+	$CR^{p}_{n} = C^{p}_{n+p-1}$\\
+	Kaplansky: $f(n,p) = C^p_{n-p+1}$ , $g(n,p) = \frac{n}{n-p}C^p_{n-p}$ \\
+	Permutação caótica: $D_n = n! \left[ \frac{1}{0!} - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \dots + (-1)^n \frac{1}{n!}\right] $\\
+	Princípio da Inclusão-Exclusão:\\
+	$\sharp \bigcup_{i=1}^n A_i = \sum_{i=1}^n (-1)^{i-1} S_i$\\
+	$S_0 = \sharp\Omega $ ,
+	$S_1 = \sum_{i=1}^n \sharp A_i $ ,
+	$S_2 = \sum_{1\leq i < j \leq n}^n \sharp(A_i \cap A_j) $ ,
+	$S_3 = \sum_{1\leq i < j < k \leq n}^n \sharp(A_i \cap A_j \cap A_k) $ \dots \\
+	Exatamente p: $\sum_{k=0}^{n-p} (-1)^k C^{k}_{k+p} S_{p+k}$\\
+	Pelo menos p: $\sum_{k=0}^{n-p} (-1)^k C^{k}_{k+p-1} S_{p+k}$\\
+\end{small}
+
+\end{document}
