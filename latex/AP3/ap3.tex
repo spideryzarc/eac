@@ -1,0 +1,75 @@
+% !TeX spellcheck = pt_BR
+\documentclass[a4paper,12pt]{article}  % tipo do documento
+%\usepackage[brazil]{babel}           % define a linguagem padrão
+\usepackage{graphicx}                % permite a inserção de figuras
+\usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}        % para usar caracteres acentuados diretamente
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=1.5cm,vmargin=1cm]{geometry}
+% \usepackage{listings} %para colocar codigos
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\setlength{\columnsep}{1.5cm}
+\setlength{\columnseprule}{0.2pt}
+
+% \newcommand{\gabarito}[1]{\textbf{\begin{small} \\ #1 \\ \end{small}}} %mostrar gabarito
+\newcommand{\gabarito}[1]{\textbf{\begin{small} \end{small}}} %nao mostrar gabarito
+
+
+\begin{document}
+\thispagestyle{empty}
+% \pagestyle{empty}
+
+UNIVERSIDADE FEDERAL DO CEARÁ\\
+Departamento de Estatística e Matemática Aplicada\\
+Disciplina de Elementos de Análise Combinatória cc0279.\\
+Professor: Albert Einstein F. Muritiba.\\
+Temas: Números Binomiais, Binômio de Newton e Probabilidade\\[0.2cm]
+\textbf{Nome}: \makebox[380pt]{\hrulefill} \vspace{2pt}
+%Matr\'icula:\makebox[60pt]{\hrulefill} \vspace{2pt}
+\begin{center}
+	3º AP
+	% -- \textit{2ª Chamada}
+	% 3\textordfeminine Avaliação - Segunda Chamada
+	% npc 3 %+ nef
+	% NEF
+\end{center}
+%\begin{multicols}{2}
+Resolva as questões a seguir, apresentando detalhadamente todos os cálculos, raciocínios e justificativas.
+\begin{enumerate}
+    
+    \item No contexto da teoria das probabilidades, defina:
+    \begin{enumerate}
+        \item Espaço amostral;
+        \item Evento;
+        \item Evento elementar;
+        \item Espaço de probabilidade de Laplace.
+    \end{enumerate}
+    
+    \item Explique a diferença entre eventos disjuntos e eventos independentes. Apresente um exemplo para ilustrar cada um desses conceitos.
+    
+    \item Determine a soma dos coeficientes do desenvolvimento de $(a^4 - 2b^2 + c)^{20}$.
+	
+    \item A experiência com testes práticos para habilitação de motoristas indica que 90\% dos candidatos aprovados no primeiro teste se tornam excelentes motoristas e que 70\% dos reprovados se tornam péssimos motoristas. Admitindo que a classificação dos motoristas seja apenas em excelentes ou péssimos e sabendo que 80\% dos candidatos são aprovados em seu primeiro teste, responda:
+    \begin{enumerate}
+        \item Qual é a probabilidade de um motorista ser excelente?
+        \item Se João é um péssimo motorista, qual é a probabilidade de ele ter sido aprovado no primeiro teste?
+    \end{enumerate}
+
+    \item Sacam-se, com reposição, 4 bolas de uma urna que contém 7 bolas brancas e 3 bolas pretas. Qual é a probabilidade de serem sacadas exatamente 2 bolas de cada cor? Qual seria a resposta caso a amostragem fosse feita sem reposição?
+           
+\end{enumerate}
+
+\textbf{Fórmulas:}\\
+\begin{small}
+	Binômio de Newton: $(x+a)^n = \sum_{p=0}^{n}\binom{n}{p}x^p a^{n-p}$\\[2pt]
+	Polinômio de Leibniz: $(x_1+\dots+x_p)^n = \sum_{\alpha_1+\dots +\alpha_p = n} \frac{n!}{\alpha_1! \alpha_2! \dots \alpha_p!} x_1^{\alpha_1} x_2^{\alpha_2} \dots x_p^{\alpha_p}$\\[2pt]
+	Relação de Stifel: $\binom{n}{p}=\binom{n-1}{p}+\binom{n-1}{p-1}$\\[2pt]
+	Probabilidade de Laplace: $P(A) = \frac{\# A}{\# \Omega}$\\[2pt]
+	Probabilidade Condicional: $P(A|B) = \frac{P(A \cap B)}{P(B)}$, ~$P(A \cap B) = P(B) \cdot P(A|B) = P(A) \cdot P(B|A)$\\[2pt]
+	Teorema do Produto: $P(A_1 \cap A_2 \cap \dots \cap A_n) = P(A_1) \cdot P(A_2 | A_1) \cdot P(A_3 | A_1 \cap A_2) \dots P(A_n | A_1 \cap \dots \cap A_{n-1})$\\[2pt]
+	Teorema de Bayes: $P(A_i|B) = \frac{P(A_i) \cdot P(B|A_i)}{P(A_1) \cdot P(B|A_1) + \dots + P(A_n) \cdot P(B|A_n)}$\\[2pt]
+	Distribuição Binomial: $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$
+\end{small}
+\end{document}
