@@ -1,12 +1,41 @@
 % !TeX spellcheck = pt_BR
-\documentclass[a4paper,12pt]{letter}  % tipo do documento
+\documentclass[a4paper,10pt,landscape,twocolumn]{article}  % tipo do documento
 %\usepackage[brazil]{babel}           % define a linguagem padrão
 \usepackage{graphicx}                % permite a inserção de figuras
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[hmargin=1.5cm,vmargin=1.5cm]{geometry}
+\usepackage[hmargin=1cm,vmargin=0.9cm]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
+
+% Ajuste de espaçamento para listas compactas sem dependências externas
+\let\oldenumerate\enumerate
+\let\oldendenumerate\endenumerate
+\renewenvironment{enumerate}{%
+  \oldenumerate%
+  \setlength{\itemsep}{1pt}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\topsep}{2pt}%
+  \setlength{\partopsep}{0pt}%
+}{%
+  \oldendenumerate%
+}
+\let\olditemize\itemize
+\let\oldenditemize\enditemize
+\renewenvironment{itemize}{%
+  \olditemize%
+  \setlength{\itemsep}{1pt}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\topsep}{2pt}%
+  \setlength{\partopsep}{0pt}%
+}{%
+  \oldenditemize%
+}
+
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0.2pt}
 
 \begin{document}
 \thispagestyle{empty}
