@@ -46,18 +46,54 @@ Resolva as questões a seguir, apresentando detalhadamente todos os cálculos, r
         \item Evento elementar;
         \item Espaço de probabilidade de Laplace.
     \end{enumerate}
+    \gabarito{
+        \begin{enumerate}
+            \item \textbf{Espaço amostral} ($\Omega$ ou $S$): conjunto de todos os resultados possíveis de um experimento aleatório.
+            \item \textbf{Evento}: qualquer subconjunto do espaço amostral $\Omega$ ($A \subseteq \Omega$).
+            \item \textbf{Evento elementar}: evento com um único resultado do espaço amostral ($\{\omega\}$, com $\omega \in \Omega$).
+            \item \textbf{Espaço de probabilidade de Laplace}: espaço amostral $\Omega$ finito e não vazio onde todos os eventos elementares são equiprováveis. Para qualquer evento $A$, $P(A) = \frac{\# A}{\# \Omega}$.
+        \end{enumerate}
+    }
     
     \item Explique a diferença entre eventos disjuntos e eventos independentes. Apresente um exemplo para ilustrar cada um desses conceitos.
+    \gabarito{
+        Eventos \textbf{disjuntos} não podem ocorrer simultaneamente: $A \cap B = \emptyset \implies P(A \cap B) = 0$. Eventos \textbf{independentes} são tais que a ocorrência de um não afeta a probabilidade do outro: $P(A \cap B) = P(A) \cdot P(B)$.
+        
+        \textit{Exemplo de disjuntos}: No lançamento de um dado, $A = \{\text{par}\}$ e $B = \{\text{ímpar}\}$.
+        
+        \textit{Exemplo de independentes}: No lançamento de dois dados, $A = \{\text{4 no 1º dado}\}$ e $B = \{\text{6 no 2º dado}\}$.
+    }
     
     \item Determine a soma dos coeficientes do desenvolvimento de $(a^4 - 2b^2 + c)^{20}$.
+    \gabarito{
+        Substituindo todas as variáveis por 1:
+        \[ S = (1^4 - 2(1)^2 + 1)^{20} = (1 - 2 + 1)^{20} = 0^{20} = 0 \]
+        A soma dos coeficientes é $0$.
+    }
 	
     \item A experiência com testes práticos para habilitação de motoristas indica que 90\% dos candidatos aprovados no primeiro teste se tornam excelentes motoristas e que 70\% dos reprovados se tornam péssimos motoristas. Admitindo que a classificação dos motoristas seja apenas em excelentes ou péssimos e sabendo que 80\% dos candidatos são aprovados em seu primeiro teste, responda:
     \begin{enumerate}
         \item Qual é a probabilidade de um motorista ser excelente?
         \item Se João é um péssimo motorista, qual é a probabilidade de ele ter sido aprovado no primeiro teste?
     \end{enumerate}
+    \gabarito{
+        Definindo $A$: aprovado ($P(A)=0,8$), $R$: reprovado ($P(R)=0,2$), $E$: excelente, $P$: péssimo. Temos $P(E|A)=0,9$, $P(P|A)=0,1$, $P(P|R)=0,7$, $P(E|R)=0,3$.
+        \begin{enumerate}
+            \item Pelo TPT: $P(E) = P(A)P(E|A) + P(R)P(E|R) = 0,8 \cdot 0,9 + 0,2 \cdot 0,3 = 0,72 + 0,06 = 0,78$ ($78\%$).
+            \item Por Bayes: $P(A|P) = \frac{P(A)P(P|A)}{P(P)} = \frac{0,8 \cdot 0,1}{1 - 0,78} = \frac{0,08}{0,22} = \frac{4}{11} \approx 36,36\%$.
+        \end{enumerate}
+    }
 
     \item Sacam-se, com reposição, 4 bolas de uma urna que contém 7 bolas brancas e 3 bolas pretas. Qual é a probabilidade de serem sacadas exatamente 2 bolas de cada cor? Qual seria a resposta caso a amostragem fosse feita sem reposição?
+    \gabarito{
+        Urna com 10 bolas (7 brancas, 3 pretas). Queremos 2 brancas e 2 pretas em 4 saques.
+        
+        \textbf{Com reposição} (Binomial):
+        \[ P(X=2) = \binom{4}{2} (0,7)^2 (0,3)^2 = 6 \cdot 0,49 \cdot 0,09 = 0,2646 \text{ ($26,46\%$)} \]
+        
+        \textbf{Sem reposição} (Hipergeométrica):
+        \[ P = \frac{\binom{7}{2}\binom{3}{2}}{\binom{10}{4}} = \frac{21 \cdot 3}{210} = \frac{63}{210} = 0,3 \text{ ($30\%$)} \]
+    }
            
 \end{enumerate}
 
