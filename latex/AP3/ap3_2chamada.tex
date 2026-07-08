@@ -1,0 +1,107 @@
+% !TeX spellcheck = pt_BR
+\documentclass[a4paper,12pt]{article}  % tipo do documento
+%\usepackage[brazil]{babel}           % define a linguagem padrão
+\usepackage{graphicx}                % permite a inserção de figuras
+\usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}        % para usar caracteres acentuados diretamente
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=1.5cm,vmargin=1cm]{geometry}
+% \usepackage{listings} %para colocar codigos
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\setlength{\columnsep}{1.5cm}
+\setlength{\columnseprule}{0.2pt}
+
+% \newcommand{\gabarito}[1]{\textbf{\begin{small} \\ #1 \\ \end{small}}} %mostrar gabarito
+\newcommand{\gabarito}[1]{\textbf{\begin{small} \end{small}}} %nao mostrar gabarito
+
+
+\begin{document}
+\thispagestyle{empty}
+% \pagestyle{empty}
+
+UNIVERSIDADE FEDERAL DO CEARÁ\\
+Departamento de Estatística e Matemática Aplicada\\
+Disciplina de Elementos de Análise Combinatória cc0279.\\
+Professor: Albert Einstein F. Muritiba.\\
+Temas: Números Binomiais, Binômio de Newton e Probabilidade\\[0.2cm]
+\textbf{Nome}: \makebox[380pt]{\hrulefill} \vspace{2pt}
+%Matr\'icula:\makebox[60pt]{\hrulefill} \vspace{2pt}
+\begin{center}
+	3º AP -- Segunda Chamada
+\end{center}
+%\begin{multicols}{2}
+Resolva as questões a seguir, apresentando detalhadamente todos os cálculos, raciocínios e justificativas.
+\begin{enumerate}
+    
+    \item No contexto da teoria das probabilidades, defina:
+    \begin{enumerate}
+        \item Espaço amostral;
+        \item Evento;
+        \item Evento elementar;
+        \item Espaço de probabilidade de Laplace.
+    \end{enumerate}
+    \gabarito{
+        \begin{enumerate}
+            \item \textbf{Espaço amostral} ($\Omega$ ou $S$): conjunto de todos os resultados possíveis de um experimento aleatório.
+            \item \textbf{Evento}: qualquer subconjunto do espaço amostral $\Omega$ ($A \subseteq \Omega$).
+            \item \textbf{Evento elementar}: evento com um único resultado do espaço amostral ($\{\omega\}$, com $\omega \in \Omega$).
+            \item \textbf{Espaço de probabilidade de Laplace}: espaço amostral $\Omega$ finito e não vazio onde todos os eventos elementares são equiprováveis. Para qualquer evento $A$, $P(A) = \frac{\# A}{\# \Omega}$.
+        \end{enumerate}
+    }
+    
+    \item Explique a diferença entre eventos disjuntos e eventos independentes. Apresente um exemplo para ilustrar cada um desses conceitos.
+    \gabarito{
+        Eventos \textbf{disjuntos} não podem ocorrer simultaneamente: $A \cap B = \emptyset \implies P(A \cap B) = 0$. Eventos \textbf{independentes} são tais que a ocorrência de um não afeta a probabilidade do outro: $P(A \cap B) = P(A) \cdot P(B)$.
+        
+        \textit{Exemplo de disjuntos}: No lançamento de um dado, $A = \{\text{par}\}$ e $B = \{\text{ímpar}\}$.
+        
+        \textit{Exemplo de independentes}: No lançamento de dois dados, $A = \{\text{4 no 1º dado}\}$ e $B = \{\text{6 no 2º dado}\}$.
+    }
+    
+    \item Determine a soma dos coeficientes do desenvolvimento de $(3a^2 - 5b^3 + 3c)^{12}$.
+    \gabarito{
+        Substituindo todas as variáveis por 1:
+        \[ S = (3(1)^2 - 5(1)^3 + 3(1))^{12} = (3 - 5 + 3)^{12} = 1^{12} = 1 \]
+        A soma dos coeficientes é $1$.
+    }
+	
+    \item A experiência com testes práticos para habilitação de motoristas indica que 80\% dos candidatos aprovados no primeiro teste se tornam excelentes motoristas e que 60\% dos reprovados se tornam péssimos motoristas. Admitindo que a classificação dos motoristas seja apenas em excelentes ou péssimos e sabendo que 75\% dos candidatos são aprovados em seu primeiro teste, responda:
+    \begin{enumerate}
+        \item Qual é a probabilidade de um motorista ser excelente?
+        \item Se João é um péssimo motorista, qual é a probabilidade de ele ter sido aprovado no primeiro teste?
+    \end{enumerate}
+    \gabarito{
+        Definindo $A$: aprovado ($P(A)=0,75$), $R$: reprovado ($P(R)=0,25$), $E$: excelente, $P$: péssimo. Temos $P(E|A)=0,8$, $P(P|A)=0,2$, $P(P|R)=0,6$, $P(E|R)=0,4$.
+        \begin{enumerate}
+            \item Pelo TPT: $P(E) = P(A)P(E|A) + P(R)P(E|R) = 0,75 \cdot 0,8 + 0,25 \cdot 0,4 = 0,60 + 0,10 = 0,70$ ($70\%$).
+            \item Por Bayes: $P(A|P) = \frac{P(A)P(P|A)}{P(P)} = \frac{0,75 \cdot 0,2}{1 - 0,70} = \frac{0,15}{0,30} = 0,50$ ($50\%$).
+        \end{enumerate}
+    }
+
+    \item Sacam-se, com reposição, 4 bolas de uma urna que contém 6 bolas brancas e 4 bolas pretas. Qual é a probabilidade de serem sacadas exatamente 2 bolas de cada cor? Qual seria a resposta caso a amostragem fosse feita sem reposição?
+    \gabarito{
+        Urna com 10 bolas (6 brancas, 4 pretas). Queremos 2 brancas e 2 pretas em 4 saques.
+        
+        \textbf{Com reposição} (Binomial):
+        \[ P(X=2) = \binom{4}{2} (0,6)^2 (0,4)^2 = 6 \cdot 0,36 \cdot 0,16 = 0,3456 \text{ ($34,56\%$)} \]
+        
+        \textbf{Sem reposição} (Hipergeométrica):
+        \[ P = \frac{\binom{6}{2}\binom{4}{2}}{\binom{10}{4}} = \frac{15 \cdot 6}{210} = \frac{90}{210} = \frac{3}{7} \approx 42,86\% \]
+    }
+           
+\end{enumerate}
+
+\textbf{Fórmulas:}\\
+\begin{small}
+	Binômio de Newton: $(x+a)^n = \sum_{p=0}^{n}\binom{n}{p}x^p a^{n-p}$\\[2pt]
+	Polinômio de Leibniz: $(x_1+\dots+x_p)^n = \sum_{\alpha_1+\dots +\alpha_p = n} \frac{n!}{\alpha_1! \alpha_2! \dots \alpha_p!} x_1^{\alpha_1} x_2^{\alpha_2} \dots x_p^{\alpha_p}$\\[2pt]
+	Relação de Stifel: $\binom{n}{p}=\binom{n-1}{p}+\binom{n-1}{p-1}$\\[2pt]
+	Probabilidade de Laplace: $P(A) = \frac{\# A}{\# \Omega}$\\[2pt]
+	Probabilidade Condicional: $P(A|B) = \frac{P(A \cap B)}{P(B)}$, ~$P(A \cap B) = P(B) \cdot P(A|B) = P(A) \cdot P(B|A)$\\[2pt]
+	Teorema do Produto: $P(A_1 \cap A_2 \cap \dots \cap A_n) = P(A_1) \cdot P(A_2 | A_1) \cdot P(A_3 | A_1 \cap A_2) \dots P(A_n | A_1 \cap \dots \cap A_{n-1})$\\[2pt]
+	Teorema de Bayes: $P(A_i|B) = \frac{P(A_i) \cdot P(B|A_i)}{P(A_1) \cdot P(B|A_1) + \dots + P(A_n) \cdot P(B|A_n)}$\\[2pt]
+	Distribuição Binomial: $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$
+\end{small}
+\end{document}

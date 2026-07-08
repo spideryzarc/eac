@@ -1,0 +1,173 @@
+% !TeX spellcheck = pt_BR
+\documentclass[a4paper,10pt,landscape,twocolumn]{article}  % tipo do documento
+%\usepackage[brazil]{babel}           % define a linguagem padrão
+\usepackage{graphicx}                % permite a inserção de figuras
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=0.8cm,vmargin=0.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Ajuste de espaçamento para listas compactas sem dependências externas
+\let\oldenumerate\enumerate
+\let\oldendenumerate\endenumerate
+\renewenvironment{enumerate}{%
+  \oldenumerate%
+  \setlength{\itemsep}{1pt}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\topsep}{2pt}%
+  \setlength{\partopsep}{0pt}%
+}{%
+  \oldendenumerate%
+}
+\let\olditemize\itemize
+\let\oldenditemize\enditemize
+\renewenvironment{itemize}{%
+  \olditemize%
+  \setlength{\itemsep}{1pt}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\topsep}{2pt}%
+  \setlength{\partopsep}{0pt}%
+}{%
+  \oldenditemize%
+}
+
+\setlength{\columnsep}{0.8cm}
+\setlength{\columnseprule}{0.2pt}
+
+\begin{document}
+\footnotesize
+\thispagestyle{empty}
+
+UNIVERSIDADE FEDERAL DO CEARÁ\\
+Departamento de Estatística e Matemática Aplicada\\
+Disciplina de Elementos de Análise Combinatória cc0279.\\
+Professor: Albert Einstein F. Muritiba.\\
+\textbf{Gabarito Oficial - 3º AP (Segunda Chamada)} \\[0.2cm]
+
+\begin{enumerate}
+    
+    \item \textbf{No contexto da teoria das probabilidades, defina:}
+    \begin{enumerate}
+        \item \textbf{Espaço amostral;}
+        \item \textbf{Evento;}
+        \item \textbf{Evento elementar;}
+        \item \textbf{Espaço de probabilidade de Laplace.}
+    \end{enumerate}
+    
+    \textbf{Solução:}
+    \begin{enumerate}
+        \item \textbf{Espaço amostral} (geralmente denotado por $\Omega$ ou $S$): É o conjunto de todos os resultados possíveis de um experimento aleatório.
+        \item \textbf{Evento}: É qualquer subconjunto do espaço amostral $\Omega$. Formalmente, um conjunto $A$ é um evento se $A \subseteq \Omega$.
+        \item \textbf{Evento elementar} (ou simples): É um evento contendo um único resultado (elemento) do espaço amostral, ou seja, um conjunto unitário $\{\omega\}$, com $\omega \in \Omega$.
+        \item \textbf{Espaço de probabilidade de Laplace}: É um espaço amostral $\Omega$ finito e não vazio onde todos os eventos elementares são equiprováveis (têm a mesma probabilidade de ocorrer). Nesse caso, a probabilidade de qualquer evento $A \subseteq \Omega$ é dada por:
+        \[ P(A) = \frac{\# A}{\# \Omega} = \frac{\text{número de casos favoráveis}}{\text{número de casos possíveis}} \]
+    \end{enumerate}
+    
+    \item \textbf{Explique a diferença entre eventos disjuntos e eventos independentes. Apresente um exemplo para ilustrar cada um desses conceitos.}
+    
+    \textbf{Solução:}
+    
+    Dois eventos $A$ e $B$ são \textbf{disjuntos} (ou mutuamente exclusivos) se eles não podem ocorrer simultaneamente, ou seja, se a interseção entre eles é vazia: $A \cap B = \emptyset$. Consequentemente, $P(A \cap B) = 0$.
+    
+    Dois eventos $A$ e $B$ são \textbf{independentes} se a ocorrência de um não afeta a probabilidade de ocorrência do outro. Matematicamente, isso ocorre quando:
+    \[ P(A \cap B) = P(A) \cdot P(B) \]
+    
+    \textbf{Diferença conceitual:} A disjunção é uma propriedade de conjuntos (ausência de elementos em comum) e reflete a exclusão mútua das ocorrências físicas ou lógicas dos eventos. A independência é uma propriedade das probabilidades associadas a esses eventos, indicando que saber que um evento ocorreu não altera a chance de o outro ocorrer. Se dois eventos têm probabilidades estritamente positivas, eles não podem ser disjuntos e independentes ao mesmo tempo.
+    
+    \textbf{Exemplos:}
+    \begin{itemize}
+        \item \textbf{Eventos Disjuntos:} No lançamento de um dado comum de 6 faces, definimos $A = \{\text{obter um número par}\} = \{2, 4, 6\}$ e $B = \{\text{obter um número ímpar}\} = \{1, 3, 5\}$. Como nenhum número pode ser par e ímpar ao mesmo tempo, $A \cap B = \emptyset$.
+        \item \textbf{Eventos Independentes:} No lançamento de dois dados honestos consecutivos, definimos $A = \{\text{obter 4 no 1º dado}\}$ e $B = \{\text{obter 6 no 2º dado}\}$. O resultado obtido no primeiro dado não influencia a probabilidade do segundo. Temos $P(A) = 1/6$, $P(B) = 1/6$ e $P(A \cap B) = 1/36 = P(A) \cdot P(B)$.
+    \end{itemize}
+    
+    \item \textbf{Determine a soma dos coeficientes do desenvolvimento de $(3a^2 - 5b^3 + 3c)^{12}$.}
+    
+    \textbf{Solução:}
+    
+    A soma dos coeficientes de qualquer polinômio obtido a partir do desenvolvimento de uma expressão algébrica pode ser encontrada atribuindo o valor $1$ a todas as variáveis da expressão original. 
+    
+    Neste caso, substituímos as variáveis $a, b, c$ por $1$:
+    \[ S = (3 \cdot 1^2 - 5 \cdot 1^3 + 3 \cdot 1)^{12} \]
+    \[ S = (3 - 5 + 3)^{12} = 1^{12} = 1 \]
+    
+    \textbf{Resposta:} A soma dos coeficientes é $1$.
+	
+    \item \textbf{A experiência com testes práticos para habilitação de motoristas indica que 80\% dos candidatos aprovados no primeiro teste se tornam excelentes motoristas e que 60\% dos reprovados se tornam péssimos motoristas. Admitindo que a classificação dos motoristas seja apenas em excelentes ou péssimos e sabendo que 75\% dos candidatos são aprovados em seu primeiro teste, responda:}
+    \begin{enumerate}
+        \item \textbf{Qual é a probabilidade de um motorista ser excelente?}
+        \item \textbf{Se João é um péssimo motorista, qual é a probabilidade de ele ter sido aprovado no primeiro teste?}
+    \end{enumerate}
+    
+    \textbf{Solução:}
+    
+    Definimos os seguintes eventos:
+    \begin{itemize}
+        \item $A$: candidato aprovado no primeiro teste.
+        \item $R$: candidato reprovado no primeiro teste.
+        \item $E$: motorista torna-se excelente.
+        \item $P$: motorista torna-se péssimo.
+    \end{itemize}
+    
+    Do enunciado, temos:
+    \begin{itemize}
+        \item $P(A) = 0,75 \implies P(R) = 1 - 0,75 = 0,25$
+        \item $P(E|A) = 0,80 \implies P(P|A) = 1 - 0,80 = 0,20$
+        \item $P(P|R) = 0,60 \implies P(E|R) = 1 - 0,60 = 0,40$
+    \end{itemize}
+    
+    \begin{enumerate}
+        \item \textbf{Probabilidade de um motorista ser excelente ($P(E)$):}
+        Pelo Teorema da Probabilidade Total:
+        \[ P(E) = P(A) \cdot P(E|A) + P(R) \cdot P(E|R) \]
+        \[ P(E) = (0,75 \cdot 0,80) + (0,25 \cdot 0,40) \]
+        \[ P(E) = 0,60 + 0,10 = 0,70 \]
+        
+        \textbf{Resposta (a):} $0,70$ ou $70\%$.
+        
+        \item \textbf{Probabilidade de João ter sido aprovado, sabendo que é péssimo ($P(A|P)$):}
+        Pelo Teorema de Bayes:
+        \[ P(A|P) = \frac{P(A \cap P)}{P(P)} = \frac{P(A) \cdot P(P|A)}{P(P)} \]
+        Primeiro, determinamos a probabilidade total de ser um péssimo motorista ($P(P)$):
+        \[ P(P) = 1 - P(E) = 1 - 0,70 = 0,30 \]
+        (Ou calculando diretamente: $P(P) = P(A)\cdot P(P|A) + P(R)\cdot P(P|R) = 0,75\cdot 0,20 + 0,25\cdot 0,60 = 0,15 + 0,15 = 0,30$).
+        
+        Substituindo na fórmula de Bayes:
+        \[ P(A|P) = \frac{0,75 \cdot 0,20}{0,30} = \frac{0,15}{0,30} = 0,50 \]
+        
+        \textbf{Resposta (b):} $0,50$ ou $50\%$.
+    \end{enumerate}
+
+    \item \textbf{Sacam-se, com reposição, 4 bolas de uma urna que contém 6 bolas brancas e 4 bolas pretas. Qual é a probabilidade de serem sacadas exatamente 2 bolas de cada cor? Qual seria a resposta caso a amostragem fosse feita sem reposição?}
+    
+    \textbf{Solução:}
+    
+    Temos uma urna com 10 bolas no total, das quais 6 são brancas ($B$) e 4 são pretas ($P$). Realizam-se 4 saques ($n = 4$). Queremos a probabilidade de obter exatamente 2 bolas brancas e 2 bolas pretas.
+    
+    \textbf{Caso 1: Amostragem com reposição}
+    Como as bolas são recolocadas, cada saque é independente e as probabilidades de retirar uma bola branca ($p$) e uma preta ($1-p$) permanecem constantes em cada etapa:
+    \[ p = \frac{6}{10} = 0,6 \quad \text{e} \quad 1-p = \frac{4}{10} = 0,4 \]
+    O número de bolas brancas retiradas segue uma distribuição binomial com parâmetros $n = 4$ e $p = 0,6$. A probabilidade de obter exatamente 2 brancas é:
+    \[ P(X = 2) = \binom{4}{2} p^2 (1-p)^{2} \]
+    \[ P(X = 2) = \frac{4!}{2!2!} (0,6)^2 (0,4)^2 = 6 \cdot 0,36 \cdot 0,16 = 0,3456 \]
+    
+    \textbf{Resposta (com reposição):} $0,3456$ ou $34,56\%$.
+    
+    \textbf{Caso 2: Amostragem sem reposição}
+    Sem reposição, a probabilidade é dada pela distribuição hipergeométrica:
+    \begin{itemize}
+        \item O número de maneiras de escolher 4 bolas quaisquer de um total de 10 (casos possíveis) é:
+        \[ \binom{10}{4} = \frac{10 \cdot 9 \cdot 8 \cdot 7}{4 \cdot 3 \cdot 2 \cdot 1} = 210 \]
+        \item O número de maneiras de escolher 2 bolas brancas dentre as 6 disponíveis e 2 bolas pretas dentre as 4 disponíveis (casos favoráveis) é:
+        \[ \binom{6}{2} \cdot \binom{4}{2} = 15 \cdot 6 = 90 \]
+    \end{itemize}
+    A probabilidade correspondente é:
+    \[ P = \frac{\binom{6}{2} \cdot \binom{4}{2}}{\binom{10}{4}} = \frac{90}{210} = \frac{3}{7} \approx 0,4286 \]
+    
+    \textbf{Resposta (sem reposição):} $\frac{3}{7} \approx 42,86\%$.
+           
+\end{enumerate}
+
+\end{document}
