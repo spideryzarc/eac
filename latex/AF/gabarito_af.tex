@@ -1,0 +1,183 @@
+% !TeX spellcheck = pt_BR
+\documentclass[a4paper,10pt,landscape,twocolumn]{article}  % tipo do documento
+%\usepackage[brazil]{babel}           % define a linguagem padrão
+\usepackage{graphicx}                % permite a inserção de figuras
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=0.8cm,vmargin=0.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Ajuste de espaçamento para listas compactas sem dependências externas
+\let\oldenumerate\enumerate
+\let\oldendenumerate\endenumerate
+\renewenvironment{enumerate}{%
+  \oldenumerate%
+  \setlength{\itemsep}{1pt}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\topsep}{2pt}%
+  \setlength{\partopsep}{0pt}%
+}{%
+  \oldendenumerate%
+}
+\let\olditemize\itemize
+\let\oldenditemize\enditemize
+\renewenvironment{itemize}{%
+  \olditemize%
+  \setlength{\itemsep}{1pt}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\topsep}{2pt}%
+  \setlength{\partopsep}{0pt}%
+}{%
+  \oldenditemize%
+}
+
+\setlength{\columnsep}{0.8cm}
+\setlength{\columnseprule}{0.2pt}
+
+\begin{document}
+\footnotesize
+\thispagestyle{empty}
+
+UNIVERSIDADE FEDERAL DO CEARÁ\\
+Departamento de Estatística e Matemática Aplicada\\
+Disciplina de Elementos de Análise Combinatória cc0279.\\
+Professor: Albert Einstein F. Muritiba.\\
+\textbf{Gabarito Oficial - Avaliação Final (AF)} \\[0.2cm]
+
+\begin{enumerate}
+    
+    \item \textbf{Demonstre a validade do argumento a seguir apresentando cada passo da dedução e a regra de inferência correspondente:}
+    \begin{align*}
+        H_1: & \quad p \rightarrow (q \rightarrow r) \\
+        H_2: & \quad p \land s \\
+        H_3: & \quad u \rightarrow q \\
+        H_4: & \quad \sim(r \lor t) \\
+        \hline
+        \therefore & \quad \sim u
+    \end{align*}
+    
+    \textbf{Solução:}
+    A dedução lógica passo a passo se dá como segue:
+    \begin{enumerate}
+        \item Do preâmbulo, temos como premissa $H_2: p \land s$. Pela regra da \textbf{Simplificação}, deduzimos:
+        \[ p \]
+        \item Com o resultado $p$ obtido acima e a premissa $H_1: p \rightarrow (q \rightarrow r)$, aplicando a regra de \textbf{Modus Ponens} (MP), deduzimos:
+        \[ q \rightarrow r \]
+        \item A partir da premissa $H_4: \sim(r \lor t)$, aplicando a \textbf{Lei de De Morgan}, obtemos a conjunção equivalente:
+        \[ \sim r \land \sim t \]
+        \item Da conjunção $\sim r \land \sim t$, aplicando a regra da \textbf{Simplificação}, deduzimos:
+        \[ \sim r \]
+        \item A partir da condicional $q \rightarrow r$ (deduzida no passo 2) e da proposição $\sim r$ (deduzida no passo 4), aplicando a regra de \textbf{Modus Tollens} (MT), deduzimos:
+        \[ \sim q \]
+        \item Por fim, com a premissa $H_3: u \rightarrow q$ e a proposição $\sim q$ (deduzida no passo 5), aplicando novamente a regra de \textbf{Modus Tollens} (MT), deduzimos:
+        \[ \sim u \]
+    \end{enumerate}
+    O argumento é, portanto, \textbf{válido}. \hfill $\blacksquare$
+
+    \item \textbf{De quantas maneiras podemos escolher uma comissão de 5 vereadores a partir de um conselho composto por 12 vereadores sentados ao redor de uma mesa de reuniões circular, de modo que nenhum par de vereadores escolhidos ocupe posições consecutivas à mesa?}
+    
+    \textbf{Solução:}
+    Este problema solicita a escolha de $p$ elementos não consecutivos dispostos em um círculo de $n$ elementos. A solução é obtida pela aplicação direta do \textbf{Segundo Lema de Kaplansky}.
+    
+    Temos:
+    \begin{itemize}
+        \item $n = 12$ (número de elementos dispostos no círculo);
+        \item $p = 5$ (número de elementos a serem escolhidos).
+    \end{itemize}
+    A fórmula do Segundo Lema de Kaplansky para configurações circulares é dada por:
+    \[ g(n, p) = \frac{n}{n-p} \binom{n-p}{p} \]
+    Substituindo os valores do problema:
+    \[ g(12, 5) = \frac{12}{12-5} \binom{12-5}{5} = \frac{12}{7} \binom{7}{5} \]
+    Lembrando a propriedade complementar das combinações simples, temos $\binom{7}{5} = \binom{7}{2}$. Calculamos:
+    \[ \binom{7}{2} = \frac{7 \cdot 6}{2 \cdot 1} = 21 \]
+    Substituindo este valor na expressão:
+    \[ g(12, 5) = \frac{12}{7} \cdot 21 = 12 \cdot 3 = 36 \]
+    \textbf{Resposta:} Existem 36 maneiras distintas de formar essa comissão.
+
+    \item \textbf{Um secretário redigiu 5 cartas distintas e preparou os 5 respectivos envelopes correspondentes. Se ele inserir, de forma totalmente aleatória, uma carta em cada envelope, responda:}
+    \begin{enumerate}
+        \item \textbf{De quantas formas ele pode colocar as cartas de modo que nenhuma carta seja depositada no envelope correto?}
+        \item \textbf{De quantas formas ele pode colocar as cartas de modo que exatamente 2 cartas fiquem nos seus respectivos envelopes corretos?}
+    \end{enumerate}
+    
+    \textbf{Solução:}
+    \begin{enumerate}
+        \item A condição de que nenhuma carta seja colocada no seu envelope correto caracteriza uma permutação sem pontos fixos, denominada \textbf{permutação caótica} ou desarranjo ($D_n$).
+        
+        Para $n=5$, o número de permutações caóticas é dado pela fórmula geral de desarranjo:
+        \[ D_n = n! \sum_{k=0}^n \frac{(-1)^k}{k!} \]
+        \[ D_5 = 5! \left( \frac{1}{0!} - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!} - \frac{1}{5!} \right) \]
+        \[ D_5 = 120 \left( 1 - 1 + \frac{1}{2} - \frac{1}{6} + \frac{1}{24} - \frac{1}{120} \right) \]
+        \[ D_5 = 120 \left( \frac{60 - 20 + 5 - 1}{120} \right) = 44 \]
+        \textbf{Resposta (a):} Existem 44 formas de nenhuma carta ir para o envelope correto.
+        
+        \item Para ter exatamente 2 cartas em seus respectivos envelopes corretos:
+        \begin{itemize}
+            \item Primeiro, escolhemos quais 2 das 5 cartas ocuparão a posição correta. O número de maneiras de escolher essas 2 cartas é:
+            \[ \binom{5}{2} = \frac{5 \cdot 4}{2 \cdot 1} = 10 \]
+            \item As 3 cartas restantes devem necessariamente ocupar posições incorretas. Isso equivale a um desarranjo destas 3 cartas, correspondente a $D_3$:
+            \[ D_3 = 3! \left( \frac{1}{2!} - \frac{1}{3!} \right) = 6 \left( \frac{1}{2} - \frac{1}{6} \right) = 3 - 1 = 2 \]
+        \end{itemize}
+        Pelo Princípio Multiplicativo, a quantidade total de maneiras é:
+        \[ \binom{5}{2} \cdot D_3 = 10 \cdot 2 = 20 \]
+        \textbf{Resposta (b):} Existem 20 formas de exatamente 2 cartas irem para os envelopes corretos.
+    \end{enumerate}
+
+    \item \textbf{Determine o coeficiente do termo em $x^6$ no desenvolvimento do binômio a seguir:}
+    \[ \left(2x^2 - \frac{1}{x}\right)^9 \]
+    
+    \textbf{Solução:}
+    Pela fórmula do desenvolvimento do Binômio de Newton, o termo geral $T_{k+1}$ é escrito como:
+    \[ T_{k+1} = \binom{n}{k} a^{n-k} b^k \]
+    Aqui, identificamos $a = 2x^2$, $b = -\frac{1}{x} = -x^{-1}$ e $n = 9$. Substituindo:
+    \[ T_{k+1} = \binom{9}{k} (2x^2)^{9-k} (-x^{-1})^k \]
+    \[ T_{k+1} = \binom{9}{k} 2^{9-k} x^{2(9-k)} (-1)^k x^{-k} \]
+    \[ T_{k+1} = \binom{9}{k} 2^{9-k} (-1)^k x^{18 - 2k} x^{-k} \]
+    \[ T_{k+1} = \binom{9}{k} 2^{9-k} (-1)^k x^{18-3k} \]
+    Desejamos determinar o termo em $x^6$, o que impõe a igualdade dos expoentes da variável $x$:
+    \[ 18 - 3k = 6 \implies 3k = 12 \implies k = 4 \]
+    Substituindo $k = 4$ na expressão do termo geral:
+    \[ T_5 = \binom{9}{4} 2^{9-4} (-1)^4 x^6 = \binom{9}{4} 2^5 (1) x^6 \]
+    Calculamos agora as parcelas numéricas:
+    \[ \binom{9}{4} = \frac{9 \cdot 8 \cdot 7 \cdot 6}{4 \cdot 3 \cdot 2 \cdot 1} = 126 \]
+    \[ 2^5 = 32 \]
+    Multiplicando esses valores para obter o coeficiente final:
+    \[ C = 126 \cdot 32 = 4032 \]
+    \textbf{Resposta:} O coeficiente do termo em $x^6$ é 4032.
+
+    \item \textbf{Uma fábrica produz peças em três máquinas distintas, $M_1$, $M_2$ e $M_3$. A máquina $M_1$ é responsável por 40\% da produção total, a máquina $M_2$ por 35\%, e a máquina $M_3$ pelos 25\% restantes. Sabe-se que as proporções de peças defeituosas fabricadas por essas máquinas são, respectivamente, 2\%, 3\% e 4\%.}
+    \begin{enumerate}
+        \item \textbf{Se uma peça é retirada ao acaso do estoque de produção consolidado da fábrica, qual é a probabilidade de ela ser defeituosa?}
+        \item \textbf{Se uma peça selecionada ao acaso for inspecionada e for constatado que ela é defeituosa, qual é a probabilidade de ela ter sido produzida pela máquina $M_1$?}
+    \end{enumerate}
+    
+    \textbf{Solução:}
+    Sejam os eventos:
+    \begin{itemize}
+        \item $M_i$: A peça provém da máquina $M_i$ ($i = 1, 2, 3$).
+        \item $D$: A peça é defeituosa.
+    \end{itemize}
+    Do enunciado, temos as probabilidades a priori e condicionais:
+    \[ P(M_1) = 0{,}40, \quad P(M_2) = 0{,}35, \quad P(M_3) = 0{,}25 \]
+    \[ P(D|M_1) = 0{,}02, \quad P(D|M_2) = 0{,}03, \quad P(D|M_3) = 0{,}04 \]
+    
+    \begin{enumerate}
+        \item Pelo \textbf{Teorema da Probabilidade Total}, a probabilidade de selecionar uma peça defeituosa do estoque global é dada por:
+        \[ P(D) = P(M_1)P(D|M_1) + P(M_2)P(D|M_2) + P(M_3)P(D|M_3) \]
+        \[ P(D) = (0{,}40 \cdot 0{,}02) + (0{,}35 \cdot 0{,}03) + (0{,}25 \cdot 0{,}04) \]
+        \[ P(D) = 0{,}0080 + 0{,}0105 + 0{,}0100 = 0{,}0285 \]
+        \textbf{Resposta (a):} A probabilidade de a peça ser defeituosa é $0{,}0285$ (ou $2{,}85\%$).
+        
+        \item A probabilidade de a peça ter sido produzida por $M_1$, dado que ela é comprovadamente defeituosa, é dada pelo \textbf{Teorema de Bayes}:
+        \[ P(M_1|D) = \frac{P(M_1)P(D|M_1)}{P(D)} \]
+        Substituindo os valores apropriados:
+        \[ P(M_1|D) = \frac{0{,}40 \cdot 0{,}02}{0{,}0285} = \frac{0{,}0080}{0{,}0285} = \frac{80}{285} = \frac{16}{57} \approx 0{,}2807 \]
+        \textbf{Resposta (b):} A probabilidade procurada é $\frac{16}{57} \approx 28{,}07\%$.
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}

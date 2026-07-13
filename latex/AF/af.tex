@@ -1,0 +1,176 @@
+% !TeX spellcheck = pt_BR
+\documentclass[a4paper,12pt]{article}  % tipo do documento
+%\usepackage[brazil]{babel}           % define a linguagem padrão
+\usepackage{graphicx}                % permite a inserção de figuras
+\usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}        % para usar caracteres acentuados diretamente
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=1.2cm,vmargin=1cm]{geometry}
+% \usepackage{listings} %para colocar codigos
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\setlength{\columnsep}{1.2cm}
+\setlength{\columnseprule}{0.2pt}
+
+% \newcommand{\gabarito}[1]{\textbf{\begin{small} \\ #1 \\ \end{small}}} %mostrar gabarito
+\newcommand{\gabarito}[1]{\textbf{\begin{small} \end{small}}} %nao mostrar gabarito
+
+\begin{document}
+\thispagestyle{empty}
+
+UNIVERSIDADE FEDERAL DO CEARÁ\\
+Departamento de Estatística e Matemática Aplicada\\
+Disciplina de Elementos de Análise Combinatória cc0279.\\
+Professor: Albert Einstein F. Muritiba.\\
+Temas: Lógica, Análise Combinatória, Binômio de Newton e Probabilidade\\[0.2cm]
+\textbf{Nome}: \makebox[380pt]{\hrulefill} \vspace{2pt}
+%Matr\'icula:\makebox[60pt]{\hrulefill} \vspace{2pt}
+\begin{center}
+	Avaliação Final (AF)
+\end{center}
+
+\begin{multicols}{2}
+Resolva as questões a seguir, apresentando detalhadamente todos os cálculos, raciocínios e justificativas.
+
+\begin{enumerate}
+    
+    \item Demonstre a validade do argumento a seguir apresentando cada passo da dedução e a regra de inferência correspondente:
+    \begin{align*}
+        H_1: & \quad p \rightarrow (q \rightarrow r) \\
+        H_2: & \quad p \land s \\
+        H_3: & \quad u \rightarrow q \\
+        H_4: & \quad \sim(r \lor t) \\
+        \hline
+        \therefore & \quad \sim u
+    \end{align*}
+    \gabarito{
+        \textbf{Solução:}
+        \begin{enumerate}
+            \item De $H_2$, por Simplificação, deduzimos: $p$.
+            \item De $p$ e $H_1$, por Modus Ponens (MP), deduzimos: $q \rightarrow r$.
+            \item De $H_4$, por De Morgan, deduzimos: $\sim r \land \sim t$.
+            \item De $\sim r \land \sim t$, por Simplificação, deduzimos: $\sim r$.
+            \item De $q \rightarrow r$ e $\sim r$, por Modus Tollens (MT), deduzimos: $\sim q$.
+            \item De $H_3$ e $\sim q$, por Modus Tollens (MT), deduzimos: $\sim u$. \hfill $\blacksquare$
+        \end{enumerate}
+    }
+
+    \item De quantas maneiras podemos escolher uma comissão de 5 vereadores a partir de um conselho composto por 12 vereadores sentados ao redor de uma mesa de reuniões circular, de modo que nenhum par de vereadores escolhidos ocupe posições consecutivas à mesa?
+    \gabarito{
+        \textbf{Solução:}
+        Esse problema é resolvido diretamente pelo Segundo Lema de Kaplansky.
+        
+        Temos $n = 12$ vereadores e queremos escolher $p = 5$ deles:
+        \[ g(12, 5) = \frac{12}{12-5} \binom{12-5}{5} = \frac{12}{7} \binom{7}{5} \]
+        Sabendo que $\binom{7}{5} = \binom{7}{2} = \frac{7 \cdot 6}{2 \cdot 1} = 21$:
+        \[ g(12, 5) = \frac{12}{7} \cdot 21 = 12 \cdot 3 = 36 \]
+        Portanto, há 36 maneiras distintas de formar essa comissão.
+    }
+
+    \item Um secretário redigiu 5 cartas distintas e preparou os 5 respectivos envelopes correspondentes. Se ele inserir, de forma totalmente aleatória, uma carta em cada envelope, responda:
+    \begin{enumerate}
+        \item De quantas formas ele pode colocar as cartas de modo que \textbf{nenhuma} carta seja depositada no envelope correto?
+        \item De quantas formas ele pode colocar as cartas de modo que \textbf{exatamente 2} cartas fiquem nos seus respectivos envelopes corretos?
+    \end{enumerate}
+    \gabarito{
+        \textbf{Solução:}
+        \begin{enumerate}
+            \item Nenhuma carta no envelope correto corresponde a um desarranjo de 5 elementos ($D_5$):
+            \[ D_5 = 5! \left( \frac{1}{2} - \frac{1}{6} + \frac{1}{24} - \frac{1}{120} \right) = 44 \]
+            \item Para exatamente 2 corretas, escolhemos quais 2 de $\binom{5}{2} = 10$ formas. As 3 restantes devem ser desarranjadas de $D_3 = 2$ formas:
+            \[ \binom{5}{2} \cdot D_3 = 10 \cdot 2 = 20 \]
+        \end{enumerate}
+    }
+
+    \item Determine o coeficiente do termo em $x^6$ no desenvolvimento do binômio a seguir:
+    \[ \left(2x^2 - \frac{1}{x}\right)^9 \]
+    \gabarito{
+        \textbf{Solução:}
+        O termo geral é:
+        \[ T_{k+1} = \binom{9}{k} (2x^2)^{9-k} (-x^{-1})^k = \binom{9}{k} 2^{9-k} (-1)^k x^{18-3k} \]
+        Queremos $18 - 3k = 6 \implies k = 4$. Substituindo $k = 4$:
+        \[ T_{5} = \binom{9}{4} 2^{9-4} (-1)^4 x^6 = 126 \cdot 32 \cdot 1 \cdot x^6 = 4032 x^6 \]
+        O coeficiente procurado é 4032.
+    }
+
+    \item Uma fábrica produz peças em três máquinas distintas, $M_1$, $M_2$ e $M_3$. A máquina $M_1$ é responsável por 40\% da produção total, a máquina $M_2$ por 35\%, e a máquina $M_3$ pelos 25\% restantes. Sabe-se que as proporções de peças defeituosas fabricadas por essas máquinas são, respectivamente, 2\%, 3\% e 4\%.
+    \begin{enumerate}
+        \item Se uma peça é retirada ao acaso do estoque de produção consolidado da fábrica, qual é a probabilidade de ela ser defeituosa?
+        \item Se uma peça selecionada ao acaso for inspecionada e for constatado que ela é defeituosa, qual é a probabilidade de ela ter sido produzida pela máquina $M_1$?
+    \end{enumerate}
+    \gabarito{
+        \textbf{Solução:}
+        Sejam $M_i$ (máquina $i$) e $D$ (defeituosa). Temos:
+        \[ P(M_1)=0{,}4; P(M_2)=0{,}35; P(M_3)=0{,}25 \]
+        \[ P(D|M_1)=0{,}02; P(D|M_2)=0{,}03; P(D|M_3)=0{,}04 \]
+        \begin{enumerate}
+            \item Por Probabilidade Total:
+            \[ P(D) = 0{,}40(0{,}02) + 0{,}35(0{,}03) + 0{,}25(0{,}04) = 0{,}0285 \]
+            \item Por Bayes:
+            \[ P(M_1|D) = \frac{0{,}40 \cdot 0{,}02}{0{,}0285} = \frac{16}{57} \approx 0{,}2807 \]
+        \end{enumerate}
+    }
+
+\end{enumerate}
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+\textbf{Fórmulas:}\\
+\begin{scriptsize}
+	\textbf{Combinatória:}
+	
+	Permutação simples: $P_n = n!$
+	
+	Permutação com repetição: $P^{a,b,\dots}_n = \frac{n!}{a!b!\dots}$
+	
+	Permutação circular: $PC_n = (n-1)!$
+	
+	Combinação simples: $C^p_n = \binom{n}{p} = \frac{n!}{p!(n-p)!}$
+	
+	Combinação completa: $CR^{p}_{n} = C^{p}_{n+p-1}$
+	
+	Kaplansky 1: $f(n,p) = C^p_{n-p+1}$
+	
+	Kaplansky 2: $g(n,p) = \frac{n}{n-p}C^p_{n-p}$
+	
+	Permutação caótica: $D_n = n! \sum_{k=0}^n \frac{(-1)^k}{k!}$
+	
+	Inclusão-Exclusão:
+	
+	$\# \bigcup_{i=1}^n A_i = \sum_{i=1}^n (-1)^{i-1} S_i$
+	
+	$S_0 = \#\Omega$, ~$S_1 = \sum_{i=1}^n \# A_i$, ~$S_2 = \sum \#(A_i \cap A_j)$
+	
+	Exatamente $p$: $\sum (-1)^k C^{k}_{k+p} S_{p+k}$
+	
+	Pelo menos $p$: $\sum (-1)^k C^{k}_{k+p-1} S_{p+k}$
+	
+	\textbf{Binômio e Probabilidade:}
+	
+	Binômio de Newton: $(x+a)^n = \sum_{p=0}^{n}\binom{n}{p}x^p a^{n-p}$
+	
+	Polinômio de Leibniz:
+	
+	$(x_1+\dots+x_m)^n = \sum \frac{n!}{\alpha_1! \dots \alpha_m!} x_1^{\alpha_1} \dots x_m^{\alpha_m}$
+	
+	Relação de Stifel: $\binom{n}{p}=\binom{n-1}{p}+\binom{n-1}{p-1}$
+	
+	Probabilidade de Laplace: $P(A) = \frac{\# A}{\# \Omega}$
+	
+	Probabilidade Condicional: $P(A|B) = \frac{P(A \cap B)}{P(B)}$
+	
+	Teorema do Produto:
+	
+	$P(A_1 \cap \dots \cap A_n) = P(A_1) P(A_2 | A_1) \dots P(A_n | \dots)$
+	
+	Teorema de Bayes:
+	
+	$P(A_i|B) = \frac{P(A_i) P(B|A_i)}{P(A_1) P(B|A_1) + \dots + P(A_n) P(B|A_n)}$
+	
+	Distribuição Binomial: $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$
+\end{scriptsize}
+\end{multicols}
+
+\end{document}
